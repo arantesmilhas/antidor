@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Escolha seu tratamento - RegenaDor</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Poppins", sans-serif;
+        color: #17301c;
+        background: linear-gradient(180deg, #f1f8f4 0%, #ffffff 100%);
+      }
+
+      .notice-banner {
+        padding: 10px 18px;
+        border-bottom: 1px solid #f1cf78;
+        color: #6b4a00;
+        text-align: center;
+        background: linear-gradient(180deg, #fff9e8 0%, #fff2c9 100%);
+        font-size: 0.95rem;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .page-header {
+        padding: 36px 20px;
+        color: #fff;
+        text-align: center;
+        background: linear-gradient(135deg, #2e7d32, #1b5e20);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+      }
+
+      .page-header h1 {
+        margin: 0 0 10px;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        font-weight: 700;
+      }
+
+      .page-header p {
+        max-width: 850px;
+        margin: 0 auto;
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+
+      .page-shell {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 42px 0 34px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 34px;
+        align-items: center;
+      }
+
+      .card-panel {
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 14px 35px rgba(20, 80, 30, 0.12);
+      }
+
+      .hero-copy {
+        padding: clamp(24px, 4vw, 42px);
+      }
+
+      .eyebrow {
+        margin: 0 0 14px;
+        color: #2e7d32;
+        font-size: 0.86rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .hero-copy h2,
+      .info-copy h2,
+      .repeat-order h2 {
+        margin: 0 0 18px;
+        color: #1b5e20;
+        font-size: clamp(1.8rem, 3vw, 2.55rem);
+        font-weight: 700;
+      }
+
+      .hero-copy p,
+      .info-copy p,
+      .highlight-strip p,
+      .use-card p,
+      .repeat-order p,
+      .warning p {
+        margin: 0;
+        color: #37563d;
+        font-size: 1rem;
+        line-height: 1.75;
+      }
+
+      .hero-copy p + p,
+      .info-copy p + p {
+        margin-top: 18px;
+      }
+
+      .hero-image {
+        overflow: hidden;
+      }
+
+      .hero-image img {
+        display: block;
+        width: 100%;
+        min-height: 390px;
+        object-fit: cover;
+      }
+
+      .trust-grid,
+      .steps-grid,
+      .benefits-grid,
+      .kits-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .trust-grid,
+      .kits-section,
+      .info-section,
+      .benefits-grid,
+      .highlight-strip,
+      .use-card,
+      .repeat-order,
+      .safe-grid,
+      .warning {
+        margin-top: 34px;
+      }
+
+      .trust-item,
+      .step-card,
+      .benefit-card,
+      .safe-card {
+        padding: 22px;
+      }
+
+      .trust-item strong,
+      .step-card strong,
+      .benefit-card strong,
+      .safe-card strong {
+        display: block;
+        margin-bottom: 8px;
+        color: #1b5e20;
+        font-size: 1rem;
+      }
+
+      .trust-item span,
+      .step-card span,
+      .benefit-card span,
+      .safe-card span {
+        color: #45634b;
+        font-size: 0.94rem;
+        line-height: 1.6;
+      }
+
+      .section-title {
+        margin: 0 0 20px;
+        color: #1b5e20;
+        text-align: center;
+        font-size: clamp(1.55rem, 3vw, 2.25rem);
+        font-weight: 700;
+      }
+
+      .section-subtitle {
+        max-width: 760px;
+        margin: -8px auto 26px;
+        color: #4d6652;
+        text-align: center;
+        line-height: 1.7;
+      }
+
+      .kits-grid {
+        max-width: 690px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 16px;
+        gap: 24px;
+        border: 1px solid rgba(88, 180, 80, 0.24);
+        border-radius: 20px;
+        background: linear-gradient(180deg, #f7ffed 0%, #ecf9df 100%);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7), 0 18px 42px rgba(20, 80, 30, 0.08);
+      }
+
+      .kit-card {
+        position: relative;
+        display: flex;
+        min-height: 340px;
+        padding: 10px;
+        color: inherit;
+        text-align: center;
+        text-decoration: none;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: visible;
+        border: 1px solid rgba(46, 125, 50, 0.18);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.88);
+        box-shadow: 0 12px 26px rgba(20, 80, 30, 0.1);
+        transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+      }
+
+      .kit-card.featured {
+        border: 2px solid #4fca63;
+        background: linear-gradient(180deg, #f7fff0 0%, #eaffdf 100%);
+        transform: translateY(-8px);
+      }
+
+      .kit-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(46, 125, 50, 0.55);
+        box-shadow: 0 18px 36px rgba(20, 80, 30, 0.18);
+      }
+
+      .kit-card.featured:hover {
+        transform: translateY(-12px);
+      }
+
+      .kit-badge {
+        display: none;
+      }
+
+      .kit-card.featured .kit-badge {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        z-index: 2;
+        display: block;
+        padding: 8px 18px;
+        border-radius: 999px;
+        color: #fff;
+        background: linear-gradient(135deg, #ff9d28, #ffb13b);
+        box-shadow: 0 8px 18px rgba(46, 125, 50, 0.22);
+        font-size: 0.72rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        transform: translateX(-50%);
+        white-space: nowrap;
+      }
+
+      .kit-card h3 {
+        display: none;
+      }
+
+      .kit-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0 auto 10px;
+        padding: 0;
+        border: 1px solid rgba(46, 125, 50, 0.2);
+        border-radius: 10px;
+        object-fit: cover;
+        background: #fff;
+        box-shadow: 0 8px 18px rgba(20, 80, 30, 0.08);
+        transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+      }
+
+      .kit-card.featured .kit-image {
+        margin-top: 24px;
+      }
+
+      .kit-card:hover .kit-image {
+        border-color: rgba(46, 125, 50, 0.42);
+        transform: scale(1.015);
+        box-shadow: 0 12px 24px rgba(20, 80, 30, 0.16);
+      }
+
+      .kit-card p {
+        min-height: 42px;
+        margin: 0 0 10px;
+        padding: 9px 10px;
+        border-radius: 8px;
+        color: #26572b;
+        background: #eaffd7;
+        font-size: 0.76rem;
+        font-weight: 800;
+        line-height: 1.35;
+      }
+
+      .kit-card .btn-buy {
+        display: block;
+        margin-top: 0;
+        padding: 13px 12px;
+        border-radius: 999px;
+        color: #fff;
+        text-align: center;
+        font-size: 0.86rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        background: linear-gradient(135deg, #20a844, #60df2f);
+        box-shadow: 0 12px 22px rgba(27, 94, 32, 0.22);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .kit-card:hover .btn-buy {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 26px rgba(27, 94, 32, 0.28);
+      }
+
+      .steps-grid {
+        margin-top: 28px;
+      }
+
+      .info-section {
+        display: grid;
+        grid-template-columns: 1fr 0.9fr;
+        gap: 34px;
+        align-items: center;
+      }
+
+      .info-copy {
+        padding: clamp(24px, 4vw, 40px);
+      }
+
+      .info-image {
+        position: relative;
+        display: flex;
+        min-height: 520px;
+        padding: clamp(28px, 4vw, 52px);
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
+        background: radial-gradient(circle at 50% 46%, rgba(95, 223, 47, 0.16), rgba(255, 255, 255, 0.96) 58%);
+      }
+
+      .info-image::after {
+        content: "";
+        position: absolute;
+        bottom: 54px;
+        left: 50%;
+        width: 52%;
+        height: 24px;
+        border-radius: 50%;
+        background: rgba(20, 80, 30, 0.18);
+        filter: blur(16px);
+        transform: translateX(-50%);
+      }
+
+      .info-image img {
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: min(72%, 330px);
+        height: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 28px 24px rgba(20, 80, 30, 0.22));
+        animation: floatBottle 4.5s ease-in-out infinite;
+      }
+
+      @keyframes floatBottle {
+        0%,
+        100% {
+          transform: translateY(-8px) rotate(-1deg);
+        }
+
+        50% {
+          transform: translateY(12px) rotate(1deg);
+        }
+      }
+
+      .highlight-strip,
+      .use-card,
+      .repeat-order,
+      .warning {
+        padding: 26px;
+      }
+
+      .highlight-strip strong,
+      .use-card strong {
+        display: block;
+        margin-bottom: 8px;
+        color: #1b5e20;
+      }
+
+      .safe-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .back-link {
+        display: flex;
+        justify-content: center;
+        margin-top: 34px;
+      }
+
+      .back-link a {
+        padding: 13px 22px;
+        border-radius: 12px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        background: #1b5e20;
+      }
+
+      .warning {
+        text-align: center;
+      }
+
+      @media (max-width: 900px) {
+        .hero,
+        .info-section,
+        .trust-grid,
+        .steps-grid,
+        .benefits-grid,
+        .kits-grid,
+        .safe-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-image img {
+          min-height: 260px;
+        }
+
+        .info-image {
+          min-height: 380px;
+        }
+
+        .info-image img {
+          width: min(68%, 260px);
+        }
+
+        .kit-card {
+          min-height: auto;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="notice-banner">
+      Estamos com a fila aberta para pagamento somente na entrega. Aproveite, ela é limitada.
+    </div>
+
+    <header class="page-header">
+      <h1>Escolha seu tratamento RegenaDor</h1>
+      <p>Chega de apenas aliviar a dor. RegenaDor ajuda seu corpo a recuperar articulações, desinflamar e fortalecer a região desgastada com pagamento somente na entrega.</p>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero" aria-label="Apresentação do RegenaDor">
+        <div class="card-panel hero-copy">
+          <p class="eyebrow">RegenaDor</p>
+          <h2>Acabe com suas dores no corpo de forma natural</h2>
+          <p>O RegenaDor foi pensado para quem sofre com dores nas articulações, músculos, discos e ossos e quer um cuidado mais completo.</p>
+          <p>Ele recupera, desinflama, repõe cartilagem e fortalece seu sistema para ajudar o corpo a se realinhar.</p>
+        </div>
+
+        <div class="card-panel hero-image">
+          <img src="images/medicosegurandopote.png" alt="Médico segurando pote do RegenaDor" />
+        </div>
+      </section>
+
+      <section class="trust-grid" aria-label="Benefícios do pedido">
+        <div class="card-panel trust-item">
+          <strong>180 dias de garantia</strong>
+          <span>Se não tiver resultado, Devolvemos seu dinheiro.</span>
+        </div>
+        <div class="card-panel trust-item">
+          <strong>Pague na entrega</strong>
+          <span>Faça o pagamento somente quando receber o produto.</span>
+        </div>
+        <div class="card-panel trust-item">
+          <strong>Receba o mais rápido</strong>
+          <span>Seu pedido é enviado direto para o e-mail informado.</span>
+        </div>
+      </section>
+
+      <section class="kits-section" aria-label="Kits RegenaDor">
+        <h2 class="section-title">Escolha abaixo seu Plano do RegenaDor</h2>
+        <p class="section-subtitle">Selecione a quantidade desejada, confirme seus dados no checkout e pague apenas uma vez.</p>
+
+        <div class="kits-grid">
+          <a class="card-panel kit-card" href="https://pay.hotmart.com/L107821024G?off=67dhazfq" target="_blank" rel="noopener">
+            <div>
+              <span class="kit-badge">Opção para começar</span>
+              <img class="kit-image" src="images/2pote.png" alt="Kit RegenaDor com 2 potes" />
+              <h3>2 potes</h3>
+              <p>Opção para começar</p>
+            </div>
+            <span class="btn-buy">Adquirir agora</span>
+          </a>
+
+          <a class="card-panel kit-card featured" href="https://pay.hotmart.com/L107821024G?off=c805d756" target="_blank" rel="noopener">
+            <div>
+              <span class="kit-badge">Mais indicado</span>
+              <img class="kit-image" src="images/4potes.png" alt="Kit RegenaDor com 4 potes" />
+              <h3>4 potes</h3>
+              <p>Tratamento completo recomendado</p>
+            </div>
+            <span class="btn-buy">Adquirir agora</span>
+          </a>
+
+          <a class="card-panel kit-card" href="https://pay.hotmart.com/L107821024G?off=6p8mssni" target="_blank" rel="noopener">
+            <div>
+              <span class="kit-badge">Opção intermediária</span>
+              <img class="kit-image" src="images/6potes.png" alt="Kit RegenaDor com 6 potes" />
+              <h3>6 potes</h3>
+              <p>Opção intermediária</p>
+            </div>
+            <span class="btn-buy">Adquirir agora</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="steps-grid" aria-label="Como comprar">
+        <div class="card-panel step-card">
+          <strong>1. Escolha</strong>
+          <span>Selecione a quantidade desejada.</span>
+        </div>
+        <div class="card-panel step-card">
+          <strong>2. Confirme</strong>
+          <span>Informe seu nome, telefone e e-mail.</span>
+        </div>
+        <div class="card-panel step-card">
+          <strong>3. Receba</strong>
+          <span>Pague e receba imadiato.</span>
+        </div>
+      </section>
+
+      <section class="info-section" aria-label="Por que as dores continuam">
+        <div class="card-panel info-copy">
+          <p class="eyebrow">Entenda suas dores</p>
+          <h2>Seu problema pode não aparecer no raio X</h2>
+          <p>Ele pode estar entre suas articulações, músculos, discos e ossos.</p>
+          <p>Quando você era criança e quebrava um osso, o corpo se recuperava em semanas. O RegenaDor trabalha com esse efeito regenerativo para ajudar no cuidado das suas dores.</p>
+          <p>Diferente de anti-inflamatórios ou analgésicos, que só abafam as dores, o RegenaDor trata, recupera e fortalece o que está desgastado.</p>
+        </div>
+
+        <div class="card-panel info-image">
+          <img src="images/dor.png" alt="Articulações e mobilidade" />
+        </div>
+      </section>
+
+      <section class="benefits-grid" aria-label="Garantias e benefícios">
+        <div class="card-panel benefit-card">
+          <strong>Resultado garantido</strong>
+          <span>Mais de 5 mil pessoas já utilizaram e aprovaram os efeitos.</span>
+        </div>
+        <div class="card-panel benefit-card">
+          <strong>180 dias de garantia</strong>
+          <span>Não gostou do resultado? Peça seu dinheiro de volta.</span>
+        </div>
+        <div class="card-panel benefit-card">
+          <strong>Chega de desgaste</strong>
+          <span>Regenerar e fortalecer é o caminho para acabar com as dores.</span>
+        </div>
+      </section>
+
+      <section class="card-panel highlight-strip" aria-label="Pagamento na entrega">
+        <strong>Acesso imediato</strong>
+        <p>faça o seu pedido e receba o acesso assim que o pagamento for confirmado.</p>
+      </section>
+
+      <section class="card-panel use-card" aria-label="Modo de uso">
+        <strong>Para melhor aproveitamento</strong>
+        <p>O mais indicado é seguir o conteúdo de forma contínua. por isso, o acesso completo é recomendado para quem deseja acompanhar todas as etapas e aproveitar melhor a experiência.</p>
+      </section>
+
+      <section class="card-panel repeat-order" aria-label="Escolher novamente">
+        <p>Pronto para pedir?</p>
+        <h2>Escolha novamente sua quantidade abaixo</h2>
+        <p>Depois de ler as informações, você pode finalizar seu pedido por aqui também.</p>
+      </section>
+
+      <section class="kits-section" aria-label="Kits RegenaDor novamente">
+        <div class="kits-grid">
+          <a class="card-panel kit-card" href="https://pay.hotmart.com/L107821024G?off=67dhazfq" target="_blank" rel="noopener">
+            <div>
+              <span class="kit-badge">Opção para começar</span>
+              <img class="kit-image" src="images/2pote.png" alt="Kit RegenaDor com 2 potes" />
+              <h3>2 potes</h3>
+              <p>Opção para começar</p>
+            </div>
+            <span class="btn-buy">Adquirir agora</span>
+          </a>
+
+          <a class="card-panel kit-card featured" href="https://pay.hotmart.com/L107821024G?off=c805d756" target="_blank" rel="noopener">
+            <div>
+              <span class="kit-badge">Mais indicado</span>
+              <img class="kit-image" src="images/4potes.png" alt="Kit RegenaDor com 4 potes" />
+              <h3>4 potes</h3>
+              <p>Tratamento completo recomendado</p>
+            </div>
+            <span class="btn-buy">Adquirir agora</span>
+          </a>
+
+          <a class="card-panel kit-card" href="https://pay.hotmart.com/L107821024G?off=6p8mssni" target="_blank" rel="noopener">
+            <div>
+              <span class="kit-badge">Opção intermediária</span>
+              <img class="kit-image" src="images/6potes.png" alt="Kit RegenaDor com 6 potes" />
+              <h3>6 potes</h3>
+              <p>Opção intermediária</p>
+            </div>
+            <span class="btn-buy">Adquirir agora</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="safe-grid" aria-label="Compra segura">
+        <div class="card-panel safe-card">
+          <strong>Compra simples e segura</strong>
+          <span>Preencha seus dados no checkout e acompanhe a confirmação do pedido.</span>
+        </div>
+        <div class="card-panel safe-card">
+          <strong>Acesso sem espera</strong>
+          <span>Após a confirmação do pagamento, o acesso é liberado imediatamente.</span>
+        </div>
+      </section>
+
+      <section class="card-panel warning" aria-label="Aviso importante">
+        <p><strong>Importante:</strong> não suspenda medicações que você já utiliza. Qualquer mudança no tratamento deve ser feita somente com orientação médica.</p>
+      </section>
+
+      <div class="back-link">
+        <a href="https://metodoantidor.astroluz.site/produto/">Voltar para o início</a>
+      </div>
+    </main>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/6a46851fc5bc5d1d4917958e/1jshng114";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
+    <script>
+(() => {
+  "use strict";
+
+  const ANALYTICS_URL = "https://yiqrvmmkgxyuuikqmmsw.supabase.co/functions/v1/registrar-acesso-site";
+  const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlpcXJ2bW1rZ3h5dXVpa3FtbXN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM4NzUzNTksImV4cCI6MjA2OTQ1MTM1OX0.I_VLbU0asg0a8_qZzBBRnPxKeVS4cL_w336Eut5_ZZ4";
+  const VISITOR_KEY = "protocolodadores.articular.analytics.visitor_id";
+  const SESSION_KEY = "protocolodadores.articular.analytics.session_id";
+  const SESSION_STARTED_KEY = "protocolodadores.articular.analytics.session_started_at";
+  const SESSION_TIMEOUT_MS = 30 * 60 * 1000;
+  const HEARTBEAT_INTERVAL_MS = 60 * 1000;
+
+  if (!window.crypto?.randomUUID || !window.fetch) return;
+
+  const visitorId = getOrCreateId(window.localStorage, VISITOR_KEY);
+  const { sessionId, sessionStartedAt } = getSession();
+  const query = new URLSearchParams(window.location.search);
+
+  function isUuid(value) {
+    return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value || "");
+  }
+
+  function getOrCreateId(storage, key) {
+    let id = storage.getItem(key);
+    if (!isUuid(id)) {
+      id = window.crypto.randomUUID();
+      storage.setItem(key, id);
+    }
+    return id;
+  }
+
+  function getSession() {
+    const now = Date.now();
+    const storedSessionId = window.sessionStorage.getItem(SESSION_KEY);
+    const lastActivity = Number(window.sessionStorage.getItem(`${SESSION_KEY}:lastActivity`));
+    const storedStartedAt = Number(window.sessionStorage.getItem(SESSION_STARTED_KEY));
+    const hasValidSession =
+      isUuid(storedSessionId) &&
+      lastActivity > 0 &&
+      now - lastActivity <= SESSION_TIMEOUT_MS &&
+      storedStartedAt > 0;
+
+    if (hasValidSession) {
+      return { sessionId: storedSessionId, sessionStartedAt: storedStartedAt };
+    }
+
+    const newSessionId = window.crypto.randomUUID();
+    window.sessionStorage.setItem(SESSION_KEY, newSessionId);
+    window.sessionStorage.setItem(SESSION_STARTED_KEY, String(now));
+    return { sessionId: newSessionId, sessionStartedAt: now };
+  }
+
+  function deviceType() {
+    if (window.innerWidth <= 767) return "mobile";
+    if (window.innerWidth <= 1024) return "tablet";
+    return "desktop";
+  }
+
+  function durationSeconds() {
+    return Math.max(0, Math.min(86400, Math.round((Date.now() - sessionStartedAt) / 1000)));
+  }
+
+  function basePayload(eventType) {
+    return {
+      event_type: eventType,
+      site: "protocolo-articular",
+      visitor_id: visitorId,
+      session_id: sessionId,
+      page_path: `${window.location.pathname}${window.location.search}`.slice(0, 500),
+      page_title: document.title.slice(0, 180),
+      referrer: document.referrer || null,
+      utm_source: query.get("utm_source"),
+      utm_medium: query.get("utm_medium"),
+      utm_campaign: query.get("utm_campaign"),
+      device_type: deviceType(),
+      duration_seconds: durationSeconds(),
+    };
+  }
+
+  function send(eventType, extra = {}, keepalive = false) {
+    window.sessionStorage.setItem(`${SESSION_KEY}:lastActivity`, String(Date.now()));
+    return fetch(ANALYTICS_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        apikey: ANON_KEY,
+        Authorization: `Bearer ${ANON_KEY}`,
+      },
+      body: JSON.stringify({ ...basePayload(eventType), ...extra }),
+      keepalive,
+    }).catch(() => null);
+  }
+
+  const analytics = {
+    identify(email) {
+      const normalizedEmail = String(email || "").trim().toLowerCase();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+        return Promise.resolve(null);
+      }
+      return send("identify", { email: normalizedEmail });
+    },
+  };
+
+  window.ProtocoloAnalytics = analytics;
+  window.ProtocoloArticularAnalytics = analytics;
+
+  send("page_view");
+
+  window.setInterval(() => {
+    if (document.visibilityState === "visible") send("heartbeat");
+  }, HEARTBEAT_INTERVAL_MS);
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") send("heartbeat", {}, true);
+  });
+})();
+
+</script>
+    <script>
+(() => {
+  const SITE = window.PROTOCOLO_ANALYTICS_SITE || 'protocolo-articular';
+  const ENDPOINT = 'https://yiqrvmmkgxyuuikqmmsw.supabase.co/functions/v1/registrar-acesso-site';
+  const ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlpcXJ2bW1rZ3h5dXVpa3FtbXN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM4NzUzNTksImV4cCI6MjA2OTQ1MTM1OX0.I_VLbU0asg0a8_qZzBBRnPxKeVS4cL_w336Eut5_ZZ4';
+  const visitorKey = `${SITE}.analytics.visitor_id`, sessionKey = `${SITE}.analytics.session_id`, startedKey = `${SITE}.analytics.session_started_at`;
+  const uuid = () => crypto.randomUUID(); const now = () => Date.now();
+  const visitorId = localStorage.getItem(visitorKey) || uuid(); localStorage.setItem(visitorKey, visitorId);
+  let sessionId = sessionStorage.getItem(sessionKey), sessionStartedAt = Number(sessionStorage.getItem(startedKey) || now());
+  if (!sessionId || now() - sessionStartedAt > 1800000) { sessionId = uuid(); sessionStartedAt = now(); sessionStorage.setItem(sessionKey, sessionId); sessionStorage.setItem(startedKey, String(sessionStartedAt)); }
+  const params = new URLSearchParams(location.search); const base = { site: SITE, visitor_id: visitorId, session_id: sessionId, page_path: `${location.pathname}${location.search}`, page_title: document.title, referrer: document.referrer || null, utm_source: params.get('utm_source'), utm_medium: params.get('utm_medium'), utm_campaign: params.get('utm_campaign'), device_type: matchMedia('(max-width: 767px)').matches ? 'mobile' : 'desktop' };
+  function send(eventType, extra = {}, keepalive = false) { fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}` }, body: JSON.stringify({ ...base, ...extra, event_type: eventType, duration_seconds: Math.round((now() - sessionStartedAt) / 1000) }), keepalive }).catch(() => {}); }
+  window.ProtocoloAnalytics = { identify(email) { if (typeof email === 'string' && email.trim()) send('identify', { email: email.trim().toLowerCase() }); }, track(eventType, metadata) { if (['page_view', 'heartbeat', 'session_end', 'identify'].includes(eventType)) send(eventType, { metadata }); } };
+  send('page_view'); setInterval(() => { if (!document.hidden) send('heartbeat'); }, 60000); document.addEventListener('visibilitychange', () => { if (document.hidden) send('heartbeat', {}, true); });
+})();
+
+</script>
+  </body>
+</html>
