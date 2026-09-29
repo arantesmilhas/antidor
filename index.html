@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://gtm.zoomfitpro.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5B4C2FPM');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<title>Protocolo Desparasitação Articular</title>
+<meta name="description" content="Truque natural caseiro de 9 dias está tirando as dores nas articulações e eliminando a inflamação causada por parasitas.">
+<link rel="icon" href="images/MFpWe-logo-desparasitacao-articular-com-fundo-branco.png" type="image/png">
+<link rel="apple-touch-icon" href="images/MFpWe-logo-desparasitacao-articular-com-fundo-branco.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#16a34a;
+    --green-dark:#0e9542;
+    --green-hover:#2eac5c;
+    --green-bg:rgba(22,163,74,.1);
+    --green-border:rgba(22,163,74,.45);
+    --red:#dc2626;
+    --text:#09090b;
+    --sub:#52525b;
+    --card-border:#e5e7eb;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#fff;color:var(--text);
+    font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}
+  button{font-family:inherit;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+
+  #app{width:100%;max-width:28rem;margin:0 auto;padding:1rem .75rem 2.5rem;min-height:100svh;}
+
+  /* ---- Hook screen (step 1) ---- */
+  .hook-page{display:flex;flex-direction:column;gap:1rem;padding-top:.5rem;}
+  .hook-headline{margin:0;text-align:center;font-size:1.35rem;line-height:1.35;font-weight:700;}
+  .hook-headline .tag-urgent{color:#fff;background:var(--text);padding:0 .2em;}
+  .hook-headline .hl-green{color:var(--green);}
+  .hook-headline .hl-underline{text-decoration:underline;}
+  .hook-sub{margin:0;text-align:center;font-size:1rem;line-height:1.5;color:var(--sub);}
+  .hook-img{width:100%;border-radius:1rem;overflow:hidden;}
+
+  /* ---- Header (quiz screens) ---- */
+  .qheader{position:relative;display:flex;flex-direction:column;align-items:center;padding-bottom:1rem;}
+  .back-btn{position:absolute;left:0;top:.15rem;background:none;border:none;font-size:1.4rem;line-height:1;cursor:pointer;color:var(--text);padding:.25rem;}
+  .qlogo{height:62px;margin-bottom:.6rem;}
+  .progress-track{width:100%;height:8px;border-radius:999px;background:var(--green-bg);overflow:hidden;}
+  .progress-fill{height:100%;background:var(--green);border-radius:999px;transition:width .6s ease;}
+
+  .q-title{font-size:1.3rem;font-weight:800;text-align:center;margin:1.1rem 0 .4rem;line-height:1.3;text-wrap:balance;}
+  .q-title .hl-green{color:var(--green);}
+  .q-title .hl-red{color:var(--red);}
+  .q-sub{font-size:.9rem;color:var(--sub);text-align:center;margin:0 0 1.2rem;line-height:1.4;}
+
+  .options{display:flex;flex-direction:column;gap:.75rem;margin-bottom:1rem;}
+
+  .opt-solid{background:var(--green);color:#fff;border:none;border-radius:1rem;
+    padding:1rem 1.25rem;font-weight:600;font-size:.95rem;text-align:center;cursor:pointer;
+    box-shadow:0 4px 0 var(--green-dark);transition:transform .12s ease;}
+  .opt-solid:hover{background:var(--green-hover);}
+  .opt-solid:active{transform:translateY(3px);box-shadow:0 1px 0 var(--green-dark);}
+
+  .opt-outline{background:var(--green-bg);border:1px solid var(--green-border);border-radius:1rem;
+    padding:.9rem 1rem;display:flex;justify-content:space-between;align-items:center;gap:.75rem;
+    text-align:left;cursor:pointer;font-size:.95rem;width:100%;color:var(--text);}
+  .opt-outline .chev{width:1.7rem;height:1.7rem;border:1px solid var(--green);border-radius:999px;
+    display:flex;align-items:center;justify-content:center;color:var(--green);flex-shrink:0;font-size:1rem;}
+
+  .opt-checkbox{background:var(--green-bg);border:1px solid var(--green-border);border-radius:1rem;
+    padding:.9rem 1rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;
+    font-size:.95rem;width:100%;color:var(--text);}
+  .opt-checkbox .box{width:1.3rem;height:1.3rem;border:1px solid var(--green);border-radius:.4rem;
+    flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;}
+  .opt-checkbox.selected .box{background:var(--green);}
+
+  .btn-continue{background:var(--green);color:#fff;border:none;border-radius:1rem;padding:1.05rem;
+    font-weight:700;text-align:center;cursor:pointer;box-shadow:0 4px 0 var(--green-dark);width:100%;
+    font-size:1rem;display:block;transition:transform .12s ease;}
+  .btn-continue:hover{background:var(--green-hover);}
+  .btn-continue:active{transform:translateY(3px);box-shadow:0 1px 0 var(--green-dark);}
+
+  /* ---- Gender cards (step 2) ---- */
+  .gender-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+  .gender-card{border:1px solid var(--card-border);border-radius:1rem;overflow:hidden;background:#fff;cursor:pointer;padding:0;}
+  .gender-card img{width:100%;aspect-ratio:1/1;object-fit:cover;}
+  .gender-card .label{display:flex;align-items:center;justify-content:space-between;padding:.65rem .8rem;font-size:.9rem;font-weight:500;}
+  .gender-card .label .chev{color:var(--green);font-size:1.1rem;}
+
+  /* ---- Fake news article (step 9) — agora é uma imagem única, ver renderArticle ---- */
+  .article-card{border:1px solid var(--card-border);border-radius:1rem;overflow:hidden;margin-bottom:1.2rem;}
+
+
+
+  /* ---- Audio widget (réplica exata do componente "whatsapp" do site original,
+     medida via DOM ao vivo: fundo #efeae2, bolha branca com rabinho reto no
+     topo-esquerda, play sem círculo de fundo, barras cinza + bolinha azul,
+     selo de microfone azul embaixo-à-esquerda do avatar) ---- */
+  .wa-bg{position:relative;background:#efeae2;border-radius:.75rem;padding:1.25rem 1rem;
+    overflow:hidden;margin-bottom:1.1rem;}
+  .wa-bg-pattern{position:absolute;inset:0;
+    background-image:url('images/bg-whatsapp.png');
+    background-repeat:repeat;opacity:.5;pointer-events:none;}
+  .wa-bubble{position:relative;background:#fff;border-radius:0 .75rem .75rem .75rem;
+    box-shadow:0 1px .5px rgba(0,0,0,.13);padding:.55rem .8rem .55rem 1rem;
+    display:flex;align-items:center;gap:.7rem;color:#9b8e8d;}
+  .wa-tail{position:absolute;top:0;right:100%;width:8px;height:13px;}
+  .wa-tail svg{display:block;width:100%;height:100%;fill:#fff;}
+  .wa-play{background:none;border:none;padding:0;cursor:pointer;color:#9b8e8d;
+    width:1.25rem;height:1.25rem;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+  .wa-play:hover{color:#8b7e7e;}
+  .wa-play svg{width:100%;height:100%;}
+  .wa-mid{flex:1;min-width:0;position:relative;padding-bottom:1rem;}
+  .wa-bars{display:flex;align-items:center;justify-content:space-between;height:24px;position:relative;width:100%;}
+  .wa-bars span{width:4px;border-radius:4px;background:#ced0d1;flex-shrink:0;transition:height .25s ease,background-color .15s linear;}
+  .wa-bars span.wa-played{background:#858a8d;}
+  .wa-dot{position:absolute;left:0;top:2px;width:1rem;height:1rem;border-radius:999px;background:#50c2f7;
+    transition:left .1s linear;pointer-events:none;}
+  .wa-time{position:absolute;left:1px;bottom:0;font-size:.7rem;color:#8696a0;}
+  .wa-avatar-wrap{position:relative;width:3.5rem;height:3.5rem;flex-shrink:0;}
+  .wa-avatar-wrap img{width:100%;height:100%;border-radius:999px;object-fit:cover;display:block;}
+  .wa-mic{position:absolute;bottom:-4px;left:-4px;width:1.5rem;height:2.05rem;color:#50c2f7;}
+  .wa-mic svg{width:100%;height:100%;display:block;}
+
+  /* ---- Real YouTube testimonial embed ---- */
+  .video-embed{position:relative;border-radius:1rem;overflow:hidden;background:#000;aspect-ratio:9/16;
+    max-height:70vh;margin-bottom:.3rem;}
+  .video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .video-caption{text-align:center;font-weight:700;margin:.7rem 0 .1rem;font-size:1rem;}
+  .video-subcaption{text-align:center;color:var(--sub);font-size:.85rem;margin:0 0 1.1rem;}
+
+  /* ---- Alert banner (step 17) ---- */
+  .alert-banner{background:var(--green);color:#fff;border-radius:1rem;padding:.9rem 1rem;margin-bottom:1.2rem;font-size:.9rem;line-height:1.4;}
+  .alert-banner b{display:block;margin-bottom:.15rem;}
+  .alert-banner u{text-decoration:underline;font-weight:600;}
+
+  /* ---- Testimonial text card ---- */
+  .testimonial{background:#fff;border:1px solid var(--card-border);border-radius:1rem;padding:1rem;
+    display:flex;gap:.75rem;margin-bottom:1rem;}
+  .testimonial img{width:3rem;height:3rem;border-radius:999px;object-fit:cover;flex-shrink:0;}
+  .testimonial .name{font-weight:700;font-size:.95rem;}
+  .testimonial .loc{font-size:.75rem;color:var(--sub);margin-bottom:.4rem;}
+  .testimonial .quote{font-size:.88rem;color:#1f2937;line-height:1.45;}
+
+  /* ---- WhatsApp carousel (step 23) ---- */
+  .wa-carousel{position:relative;border-radius:1rem;overflow:hidden;margin-top:1.2rem;border:1px solid var(--card-border);}
+  .wa-slide{display:none;}
+  .wa-slide.active{display:block;}
+  .wa-dots{display:flex;justify-content:center;gap:.4rem;margin-top:.6rem;}
+  .wa-dots button{width:.5rem;height:.5rem;padding:0;border-radius:999px;background:#d1d5db;border:none;cursor:pointer;}
+  .wa-dots button.active{background:var(--green);}
+
+  /* ---- Loading screen (step 26) ---- */
+  .loading-wrap{text-align:center;padding-top:2.5rem;}
+  .loading-ring{width:9rem;height:9rem;border-radius:999px;margin:0 auto 1.5rem;position:relative;
+    background:conic-gradient(var(--green) calc(var(--pct,0)*1%), var(--green-bg) 0);
+    display:flex;align-items:center;justify-content:center;transition:background 1s linear;}
+  .loading-ring::before{content:'';position:absolute;inset:.6rem;background:#fff;border-radius:999px;}
+  .loading-pct{position:relative;font-size:1.8rem;font-weight:800;color:var(--text);}
+  .loading-title{font-size:1.15rem;font-weight:700;margin:0 0 .4rem;}
+  .loading-status{color:var(--sub);font-size:.9rem;}
+
+  /* ---- Analysis / results screen (novo step, entre loading e offer) ---- */
+  .slider-row{margin-bottom:.9rem;}
+  .slider-row .slabel{display:flex;justify-content:space-between;font-size:.85rem;font-weight:600;gap:.5rem;}
+  .slider-row .strack{height:6px;border-radius:999px;background:#e5e7eb;margin-top:.35rem;}
+  .slider-row .sfill{height:100%;border-radius:999px;}
+  .sfill.red{background:var(--red);}
+  .sfill.green{background:var(--green);}
+  .agent-name{text-align:center;color:var(--green);text-decoration:underline;font-style:italic;font-size:1.05rem;margin:.2rem 0 1rem;}
+
+  /* ---- Offer page (step 27) ---- */
+  .offer-page{display:flex;flex-direction:column;gap:1.1rem;}
+  .offer-badge{display:inline-flex;align-self:center;background:var(--green-bg);color:var(--green-dark);
+    font-weight:700;font-size:.8rem;padding:.4rem .8rem;border-radius:999px;}
+  .offer-h1{text-align:center;font-size:1.5rem;font-weight:800;line-height:1.3;margin:0;text-wrap:balance;}
+  .offer-p{text-align:center;font-size:.92rem;color:#1f2937;line-height:1.55;margin:0;}
+  .offer-p em{color:var(--sub);font-style:italic;}
+  .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;}
+  .ba-card{border:1px solid var(--card-border);border-radius:1rem;overflow:hidden;text-align:center;}
+  .ba-card img{width:100%;aspect-ratio:1/1;object-fit:cover;}
+  .ba-card .cap{padding:.7rem 0;font-weight:700;}
+  .ba-note{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;text-align:center;font-size:.82rem;font-weight:600;}
+  .attention-card{background:#f9fafb;border:1px solid var(--card-border);border-radius:1rem;padding:1.1rem;}
+  .attention-card h3{margin:0 0 .6rem;font-size:1.1rem;}
+  .attention-card p{font-size:.88rem;line-height:1.55;margin:0 0 .7rem;color:#1f2937;}
+  .check-list{list-style:none;margin:0 0 .7rem;padding:0;display:flex;flex-direction:column;gap:.5rem;}
+  .check-list li{font-size:.88rem;line-height:1.5;color:#1f2937;}
+  .price-card{border:1px solid var(--card-border);border-radius:1.2rem;padding:1.1rem;}
+  .price-items{list-style:none;margin:0 0 1rem;padding:0;display:flex;flex-direction:column;gap:.55rem;}
+  .price-items li{display:flex;justify-content:space-between;gap:.5rem;font-size:.87rem;}
+  .price-total{text-align:center;margin-bottom:.9rem;}
+  .price-total .old{color:var(--sub);text-decoration:line-through;font-size:.85rem;display:block;}
+  .price-total .lead{font-size:.85rem;color:var(--sub);}
+  .price-total .big{font-size:2.1rem;font-weight:800;color:var(--green);}
+  .price-perks{display:flex;flex-direction:column;gap:.5rem;margin-top:.9rem;font-size:.85rem;}
+  .price-perks b{display:block;}
+  .price-perks span{color:var(--sub);}
+  .guarantee-banner{border-radius:1rem;overflow:hidden;}
+  .weeks-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.6rem;}
+  .weeks-list li{font-size:.9rem;line-height:1.5;padding-left:1.4rem;position:relative;}
+  .weeks-list li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:800;}
+  .test180{text-align:center;background:var(--green-bg);border-radius:1rem;padding:1rem;}
+  .test180 .t1{font-weight:800;font-size:1.1rem;color:var(--green-dark);}
+  .test180 .t2{font-size:.8rem;color:var(--sub);margin-bottom:.5rem;}
+  .test180 .t3{font-size:.85rem;color:var(--sub);}
+  .test180 .t4{font-size:1.6rem;font-weight:800;margin-bottom:.7rem;}
+  .bonus-label{text-align:center;font-size:.7rem;font-weight:700;letter-spacing:.05em;color:var(--green-dark);
+    background:var(--green-bg);border-radius:999px;padding:.4rem .8rem;align-self:center;}
+  .gift-card{border-radius:1rem;overflow:hidden;}
+  .offer-final p{font-size:.92rem;line-height:1.6;color:#1f2937;margin:0 0 .7rem;}
+  .risk-card{border-radius:1rem;overflow:hidden;}
+
+  @media (min-width:480px){ #app{padding:1.5rem 1rem 3rem;} }
+</style>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  var IMG = "images/";
+  var AUD = "audio/";
+  var CHECKOUT_URL = "https://pay.cakto.com.br/jsc3oi8_1077370";
+
+  /* 0 = Mulher, 1 = Homem — definido ao responder o passo "gender" */
+  var userGender = 0;
+
+  /* ---------------- Conteúdo com variação por gênero ---------------- */
+  /* A notícia falsa (imagem única, ver renderArticle) e a imagem inicial de
+     sintomas (ver STEPS[1].imageByGender) também trocam por gênero. */
+
+  /* Depoimento em texto do passo audio1 muda por gênero; o vídeo do YouTube
+     permanece o mesmo nas duas variações (assim está no site original). */
+  var AUDIO1_TESTIMONIAL_BY_GENDER = [
+    { img: IMG + "xs-7lWnb-download-2.jpg", name: "Rita Limeira", loc: "Porto Alegre, RS",
+      quote: "Muito obrigada Rodrigo, ja to desparasitando a 8 dias, e minhas dores simplesmente sumiram, to muito feliz por essa vitoria em minha vida😭😭😭😭 obrigada vc foi um anjo." },
+    { img: IMG + "xs-41WFY-file-2025-10-11-222643.png", name: "José Augusto da Silva", loc: "São Paulo, SP", /* nome real, confirmado no site */
+      quote: "Só tenho a agradecer o Doutor, ja to desparasitando a 7 dias, e minhas dores simplesmente sumiram, já havia caido mais de 10 vezes no chão, mesmo de muleta, agora consigo me agachar e até a trabalhar, que Deus abençoe vocês 👍👍" }
+  ];
+
+  /* ---------------- Data for steps 2..27 (question screens) ---------------- */
+  var STEPS = [
+    // index 0 -> original step2
+    { id:"gender", progress:3.7037, type:"gender",
+      title:"Vamos iniciar sua avaliação", sub:"Selecione sua opção abaixo!",
+      options:[
+        {img:IMG+"md-l1jzx-b7dcbd50-3346-43aa-9478-bf08496b2c40.png", label:"Mulher"},
+        {img:IMG+"md-bnv5l-986efdd8-45f1-4f7d-a2ff-6ce41682603c.webp", label:"Homem"}
+      ]
+    },
+    // index 1 -> step3 (baked image + choices, imagem troca por gênero: idosa/idoso)
+    { id:"symptoms-image", progress:53.7037, type:"image-choice",
+      imageByGender:[IMG+"lg-DO7L9-idosa-com-dor.png", IMG+"lg-kTACW-idoso-com-dor.png"],
+      style:"solid",
+      options:["Sinto mais de 1 😓","Sinto 2 ou mais 😬"]
+    },
+    // step4
+    { id:"already-deworm", progress:55.5556, type:"choice", style:"solid",
+      title:'Você já <span class="hl-green">Desparasitou</span> de alguma maneira?',
+      sub:"Utilizando remédios ou formas naturais.",
+      options:["😐 Não, eu nunca desparasitei.","😁 Sim, eu já desparasitei."]
+    },
+    // step5
+    { id:"medical-visit", progress:57.4074, type:"choice", style:"solid",
+      title:'Você já fez <span class="hl-green">alguma consulta</span> médica relacionada ás suas dores?',
+      sub:"Pode ser qualquer tipo de consulta profissional.",
+      options:["Sim, já fiz várias","Sim, mas poucas vezes","Nunca procurei ninguém"]
+    },
+    // step6
+    { id:"how-long", progress:59.2593, type:"choice", style:"outline",
+      title:"Há quanto tempo você sente essas dores?",
+      sub:"Por favor, responda com atenção — essa informação é essencial para a nossa análise.",
+      options:["Sinto dores há menos de 3 meses...","Sofro com isso há 6 meses","Convivo com essa tortura há mais de 1 ano","Estou sofrendo há décadas com essa enfermidade"]
+    },
+    // step7
+    { id:"how-much", progress:61.1111, type:"choice", style:"outline",
+      title:"O quanto essas dores atrapalham sua vida todos os dias?",
+      sub:"Essa informação é essencial para uma análise mais precisa da sua condição.",
+      options:[
+        "Pouco, consigo dormir tranquilo e me agachar sem medo, apenas sinto pequenas pontadas.",
+        "Mais ou menos, sinto que meu corpo está começando a travar, alguns movimentos comuns começaram a virar desafios diários",
+        "Muito, tenho medo de subir as escadas, as dores fazem parte da minha rotina, perdi a liberdade do meu corpo.",
+        "Demais, todos os dias é uma tortura constante, não aguento mais!"
+      ]
+    },
+    // step8
+    { id:"conditions", progress:62.963, type:"checkbox",
+      title:"Você tem alguma dessas condições?",
+      sub:"Elas podem influenciar diretamente o crescimento da suas dores.<br>Para uma orientação mais precisa, responda à pergunta abaixo, selecione uma ou mais:",
+      options:["Artrose","Artrite","Tendinites ou bursites","Lombalgia Mecânica","Cervicalgia Mecânica ou Bico de papagaio","Fascite Plantar ou Esporão de Calcâneo","Nenhuma das opções"]
+    },
+    // step9 -> type article (custom render, varia por gênero)
+    { id:"news", progress:64.8148, type:"article" },
+    // step10
+    { id:"awareness", progress:66.6667, type:"choice", style:"solid",
+      title:'Você tem ciência que <span class="hl-green">a falta de cuidados com esse assunto</span> pode piorar suas dores e deixar sequelas que podem ser irreversíveis?',
+      sub:"Por favor, seja sincero.",
+      options:["😔 Sim, eu sei da gravidade que é ter parasitas habitando o meu intestino","😰 Não sabia da gravidade, mais quero cuidar."]
+    },
+    // step11
+    { id:"agree1", progress:68.5185, type:"choice", style:"solid",
+      title:'Você concorda comigo que na maioria das vezes <span class="hl-green">a falta de atividade física e a má alimentação não é nossa culpa,</span> somos taxados como desequilibrados mas isso se deve as nossas articulações estarem inflamadas por conta dos parasitas?',
+      sub:"Por favor, seja sincera, quero ajudar!",
+      options:["Eu concordo sim!","Concordo em partes."]
+    },
+    // step12
+    { id:"foods", progress:70.3704, type:"checkbox",
+      title:"Você comeu algum desses alimentos nos ultimos 3 meses?",
+      sub:"Responda com atenção estamos avaliando cada resposta.",
+      options:["Leite","Queijo","Batata Frita","salsicha","presunto","Álcool"]
+    },
+    // step13
+    { id:"symptoms-list", progress:72.2222, type:"checkbox",
+      title:"Dentro dos sintomas listados abaixo, quais mais te incomodam?",
+      sub:"Selecione um ou mais.",
+      options:["Dor constante","Rigidez","Inchaço","Estalos ou crepitação","Travamento","Calor ou vermelhidão","Perda de mobilidade","Fraqueza muscular","Fadiga e cansaço"]
+    },
+    // step14
+    { id:"life-impact", progress:74.0741, type:"choice", style:"outline",
+      title:"Esses sintomas atrapalham sua vida?",
+      sub:"Seja sincero(a) na resposta.",
+      options:[
+        "😓 Sim, me impedem de fazer coisas simples como caminhar ou dormir bem.",
+        "🙂 Atrapalham um pouco, mas ainda consigo levar a vida.",
+        "💔 Estão acabando com minha qualidade de vida, tenho medo de virar um fardo para os outros.",
+        "Antes eu fazia tudo em casa, agora preciso de ajuda, cada vez perco mais minha mobilidade."
+      ]
+    },
+    // step15
+    { id:"period", progress:75.9259, type:"choice", style:"solid",
+      title:'Qual período as dores <span class="hl-red">mais te incomodam?</span>',
+      options:[
+        "Na manhã, tenho dificuldade em levantar da cama, e sinto muitas dores ao acordar.",
+        "Na Tarde, durante o dia sinto muitas dores, tenho dificuldade em fazer muitas atividades do dia dia.",
+        "Na Noite, tenho dificuldade em dormir e encontrar uma posição confortável ao deitar."
+      ]
+    },
+    // step16
+    { id:"emotional", progress:77.7778, type:"choice", style:"solid",
+      title:'O quanto essas dores realmente te <span class="hl-green">afetam emocionalmente?</span>',
+      options:[
+        "😞 Me deixam triste e sem energia até para conviver com minha família",
+        "😡 Me deixam irritado(a), sinto que nada dá certo, estou me sentindo cada vez menos útil.",
+        "😔 Me fazem perder a vontade de sair de casa e aproveitar a vida",
+        "🌙 Afetam até meu sono, acordo cansado(a) todos os dias"
+      ]
+    },
+    // step17 -> audio type (custom, testemunho varia por gênero)
+    { id:"audio1", progress:79.6296, type:"audio",
+      alert:{title:"⚠️ Os Resultados Não Mentem:", body:"Seus Sintomas estão indicando Algo Muito Perigoso &ndash; <u>Ouça Com Atenção!</u>"},
+      lead:"Escute essa rápida explicação 👇",
+      sub:"Caso o áudio não inicie, basta clicar nele!",
+      audioSrc:AUD+"C6PF1-audio-doutor-rodrigo-contando-a-verdade.mp3", audioLen:"01:32",
+      youtubeId:"2vxVfbUxePA",
+      videoLabel:"Depoimento da paciente Sueli que estava com Dor nos Joelhos",
+      caseLabel:"Veja só esse caso", caseSub:"1 semana após iniciar a desparasitação",
+      testimonialByGender: AUDIO1_TESTIMONIAL_BY_GENDER,
+      continueLabel:"Continuar"
+    },
+    // step18
+    { id:"interest", progress:81.4815, type:"choice", style:"solid",
+      title:'Você teria interesse em receber um <span class="hl-green">protocolo personalizado</span> para Desparasitação em 9 dias?',
+      options:["✅ Sim, Eu quero demais!","😃 Tenho interesse, mas quero tirar dúvidas."]
+    },
+    // step19
+    { id:"treatments", progress:83.3333, type:"checkbox",
+      title:"Quais tipos de tratamento ou medicamentos você já usou para aliviar as dores?",
+      sub:"(Selecione todos que já testou)",
+      options:["💊 Analgésicos (ex: Tramal, codeína, dipirona)","💢 Anti-inflamatórios (ex: Ibuprofeno, Diclofenaco, Nimesulida)","😴 Relaxantes musculares (ex: Dorflex, Mioflex, Torsilax)","🌿 Suplementos naturais","💉 Injeções para Dores","🚫 Nunca usei nenhum tratamento para dor"]
+    },
+    // step20
+    { id:"alt-solutions", progress:85.1852, type:"checkbox",
+      title:"Você já tentou alguma dessas soluções alternativas para aliviar a dor mas sem sucesso duradouro?",
+      options:["🙏 Fiz acupuntura, quiropraxia ou massagens, mas as dores voltaram.","🧘‍♀️ Já fiz fisioterapia, alongamentos e exercícios, mas a dor sempre volta depois de alguns dias.","🌿 Tentei chás, ervas ou remédios naturais, senti melhora no início, mas não foi o suficiente.","🩹 Usei pomadas, cremes e até suplementos, mas nada resolveu de verdade.","🦵 Já usei joelheiras, órteses ou bengalas ajudou um pouco, mas não tratou a causa.","💸 Já gastei tempo e dinheiro com várias dessas opções, sem resultado duradouro.","🔍 Ainda não testei muitas coisas — estou em busca de algo que realmente funcione e resolva de vez."]
+    },
+    // step21
+    { id:"agree2", progress:87.037, type:"choice", style:"solid",
+      title:'Você concorda comigo que a nossa saúde <span class="hl-green">é o nosso bem mais importante?</span>',
+      sub:"sem ela não somos nada.",
+      options:["✅ Concordo!","😕 Não concordo."]
+    },
+    // step22
+    { id:"visualize", progress:88.8889, type:"choice", style:"outline",
+      title:"O QUE VOCÊ FARIA SE, NESTE EXATO MOMENTO, SUAS DORES CRÔNICAS SUMISSEM E SUA VIDA VOLTASSE AO NORMAL?",
+      sub:"Agora, é hora de sentir a liberdade. Mentalize esse momento e selecione entre as opções abaixo:",
+      options:[
+        "🥳 Choraria de felicidade, sem conseguir acreditar que a dor se foi para sempre!",
+        "😌 Sentiria um alívio imenso, como se um sonho impossível tivesse se realizado, e começaria a planejar tudo o que a dor me impedia de fazer!",
+        "💪 Sentiria uma energia renovada e a certeza de que a culpa não era minha, mas dos invasores, e que agora sou livre para viver!",
+        "💃 Iria comemorar cada movimento sem dor, cada passo leve, cada noite de sono profundo e reparador!",
+        "😄 Ficaria com medo... será que é real mesmo? Mas logo viria a alegria de saber que é verdade!"
+      ]
+    },
+    // step23 -> commit (solid choices) + whatsapp carousel
+    { id:"commit", progress:90.7407, type:"commit",
+      title:'Você se compromete em seguir nosso <span class="hl-green">Protocolo de 9 Dias</span> em Casa?',
+      sub:"vou te ajudar em tudo o que precisar.",
+      options:["😍 Sim eu me Comprometo!","😀 Eu vou Tentar!"],
+      carousel:[IMG+"lg-tlEXs-img-0136-3.png", IMG+"lg-trn2R-img-0136-4.png"]
+    },
+    // step24
+    { id:"best-part", progress:92.5926, type:"choice", style:"outline",
+      title:"Qual seria a melhor parte de se livrar das dores articulares?",
+      options:["Poder andar e se movimentar sem medo","Dormir bem e acordar descansado(a)","Brincar e estar ativo(a) com a família","Voltar a ter liberdade no corpo","Não depender mais de ninguém para nada"]
+    },
+    // step25 -> audio2 (custom, gera o protocolo)
+    { id:"audio2", progress:94.4444, type:"audio",
+      lead:"Escute o áudio abaixo: 👇",
+      sub:"Caso o AUDIO não inicie, basta clicar nele!",
+      audioSrc:AUD+"xYfvP-audio-2-articular-correto.mp3", audioLen:"00:54",
+      youtubeId:"qvlpr9R76U8",
+      videoLabel:"Depoimento do paciente que estava com Dor na Coluna",
+      caseLabel:"Veja só esse caso", caseSub:"1 semana após iniciar a desparasitação",
+      continueLabel:"Gerar Protocolo Personalizado! ✅"
+    },
+    // step26 -> loading
+    { id:"loading", progress:97, type:"loading" },
+    // step27 -> analysis (tela de resultado / análise, entre o loading e a oferta)
+    { id:"analysis", progress:98.5, type:"analysis" },
+    // step28 -> offer
+    { id:"offer", progress:100, type:"offer" }
+  ];
+
+  var current = -1; // -1 = hook screen
+  var checkboxState = {};
+
+  function el(html){
+    var d = document.createElement("div");
+    d.innerHTML = html;
+    return d.firstElementChild;
+  }
+
+  function renderHeader(step){
+    var showBack = true;
+    var pct = step.progress;
+    return '' +
+      '<div class="qheader">' +
+        (showBack ? '<button class="back-btn" data-action="back" aria-label="Voltar">←</button>' : '') +
+        '<img class="qlogo" src="'+IMG+'MFpWe-logo-desparasitacao-articular-com-fundo-branco.png" alt="Protocolo Desparasitação Articular">' +
+        (pct!=null ? '<div class="progress-track"><div class="progress-fill" style="width:'+pct+'%"></div></div>' : '') +
+      '</div>';
+  }
+
+  function renderHeaderNoProgress(){
+    return '<div class="qheader">' +
+      '<button class="back-btn" data-action="back" aria-label="Voltar">←</button>' +
+      '<img class="qlogo" src="'+IMG+'MFpWe-logo-desparasitacao-articular-com-fundo-branco.png" alt="Protocolo Desparasitação Articular">' +
+    '</div>';
+  }
+
+  function optionsHtml(step){
+    var style = step.style || "solid";
+    var cls = style==="solid" ? "opt-solid" : "opt-outline";
+    return '<div class="options">' + step.options.map(function(opt, i){
+      var label = typeof opt === "string" ? opt : opt.label;
+      if(style==="outline"){
+        return '<button class="'+cls+'" data-action="choose" data-idx="'+i+'">'+
+          '<span>'+label+'</span><span class="chev">›</span></button>';
+      }
+      return '<button class="'+cls+'" data-action="choose" data-idx="'+i+'">'+label+'</button>';
+    }).join("") + '</div>';
+  }
+
+  function checkboxHtml(step){
+    var sel = checkboxState[step.id] || {};
+    return '<div class="options">' + step.options.map(function(opt, i){
+      var isSel = !!sel[i];
+      return '<button class="opt-checkbox'+(isSel?' selected':'')+'" data-action="toggle" data-idx="'+i+'">'+
+        '<span>'+opt+'</span><span class="box">'+(isSel?'✓':'')+'</span></button>';
+    }).join("") + '</div>' +
+    '<button class="btn-continue" data-action="continue">Continuar</button>';
+  }
+
+  /* Widget de áudio: réplica fiel do componente real (rabinho branco no
+     topo-esquerda da bolha, botão play sem círculo, barras + bolinha azul,
+     avatar com selo de microfone embaixo-à-esquerda).
+     As barras começam com um desenho "esqueleto" e são substituídas pela
+     forma REAL do áudio assim que o arquivo é decodificado (ver
+     hydrateAudioWidgets / drawRealWaveform). A bolinha azul acompanha a
+     reprodução via evento timeupdate do <audio> (ver toggleAudio). */
+  var WA_BARS_COUNT = 30;
+  function audioWidget(src, len){
+    var bars = "";
+    for(var i=0;i<WA_BARS_COUNT;i++){
+      var h = 4 + Math.round(Math.abs(Math.sin(i*0.7))*20);
+      bars += '<span style="height:'+h+'px"></span>';
+    }
+    return '' +
+      '<div class="wa-bg"><div class="wa-bg-pattern"></div>' +
+        '<div class="wa-bubble">' +
+          '<span class="wa-tail"><svg viewBox="0 0 8 13"><path d="M8,0 L8,13 C3,13 0,9 0,4 C0,1 3,0 8,0 Z"/></svg></span>' +
+          '<button class="wa-play" data-action="toggle-audio" data-src="'+src+'">' +
+            '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' +
+          '</button>' +
+          '<div class="wa-mid">' +
+            '<div class="wa-bars" data-audio-src="'+src+'">'+bars+'<span class="wa-dot" style="left:0%"></span></div>' +
+            '<div class="wa-time" data-role="audio-time" data-original-len="'+len+'">'+len+'</div>' +
+          '</div>' +
+          '<div class="wa-avatar-wrap">' +
+            '<img src="'+IMG+'1kKGG-foto-de-perfil.png" alt="Especialista">' +
+            '<span class="wa-mic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/></svg></span>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+  }
+
+  /* Decodifica o mp3 de verdade via Web Audio API e devolve WA_BARS_COUNT
+     valores normalizados (0 a 1) representando o volume real de cada trecho
+     do áudio — a "forma" do desenho passa a ser a forma real do áudio. */
+  var waveformCache = {};
+  function decodeRealWaveform(src){
+    if(waveformCache[src]) return waveformCache[src];
+    waveformCache[src] = new Promise(function(resolve, reject){
+      try{
+        if(typeof fetch !== "function"){ reject(new Error("fetch indisponível neste ambiente")); return; }
+        var Ctx = window.AudioContext || window.webkitAudioContext;
+        if(!Ctx){ reject(new Error("AudioContext indisponível neste ambiente")); return; }
+        fetch(src).then(function(r){ return r.arrayBuffer(); }).then(function(buf){
+          var ctx = new Ctx();
+          return ctx.decodeAudioData(buf).then(function(audioBuffer){
+            if(ctx.close) ctx.close();
+            return audioBuffer;
+          });
+        }).then(function(audioBuffer){
+          var raw = audioBuffer.getChannelData(0);
+          var blockSize = Math.max(1, Math.floor(raw.length / WA_BARS_COUNT));
+          var peaks = [];
+          for(var i=0;i<WA_BARS_COUNT;i++){
+            var start = i*blockSize, sum = 0, count = 0;
+            for(var j=0;j<blockSize && (start+j)<raw.length; j++){ sum += Math.abs(raw[start+j]); count++; }
+            peaks.push(count ? (sum/count) : 0);
+          }
+          var max = Math.max.apply(null, peaks) || 1;
+          resolve(peaks.map(function(p){ return Math.max(.12, p/max); }));
+        }).catch(reject);
+      }catch(err){ reject(err); }
+    });
+    return waveformCache[src];
+  }
+
+  /* Procura widgets de áudio ainda não hidratados dentro de root e troca as
+     barras "esqueleto" pelas barras com a forma real do áudio. Falha
+     silenciosamente (mantém o esqueleto) se o fetch/decode não rolar —
+     por exemplo ao abrir o arquivo direto como file:// sem servidor. */
+  function hydrateAudioWidgets(root){
+    var containers = (root || document).querySelectorAll('.wa-bars[data-audio-src]:not([data-hydrated])');
+    containers.forEach(function(container){
+      container.setAttribute('data-hydrated', '1');
+      var src = container.getAttribute('data-audio-src');
+      decodeRealWaveform(src).then(function(peaks){
+        var dot = container.querySelector('.wa-dot');
+        container.querySelectorAll('span:not(.wa-dot)').forEach(function(span, i){
+          if(peaks[i] != null) span.style.height = Math.round(4 + peaks[i]*20) + 'px';
+        });
+        if(dot) container.appendChild(dot); // garante que a bolinha fica por cima, no fim do desenho
+      }).catch(function(){ /* mantém o desenho esqueleto */ });
+    });
+  }
+
+  function videoEmbed(youtubeId, title){
+    return '<div class="video-embed"><iframe src="https://www.youtube.com/embed/'+youtubeId+'" ' +
+      'title="'+title+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+      'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>';
+  }
+
+  /* A "notícia" inteira (banner G1, manchete, foto, texto) é UMA imagem só
+     no site original — não texto HTML. Apenas troca a imagem por gênero. */
+  function renderArticle(){
+    var photo = (userGender === 1)
+      ? IMG + "lg-wRAq9-noticia-homem-dores-articulares.png"
+      : IMG + "lg-TxFMc-noticia-mulher-dores-articulares.png";
+    return '<div class="article-card"><img src="'+photo+'" alt="Notícia"></div>' +
+      '<button class="btn-continue" data-action="continue">Continuar</button>';
+  }
+
+  function renderAudioStep(step){
+    var html = "";
+    if(step.alert){
+      html += '<div class="alert-banner"><b>'+step.alert.title+'</b>'+step.alert.body+'</div>';
+    }
+    html += '<div class="q-title" style="margin-top:0">'+step.lead+'</div>';
+    html += '<div class="q-sub">'+step.sub+'</div>';
+    html += audioWidget(step.audioSrc, step.audioLen);
+    html += videoEmbed(step.youtubeId, step.videoLabel);
+    html += '<div class="video-caption">'+step.caseLabel+'</div>';
+    html += '<div class="video-subcaption">'+step.caseSub+'</div>';
+    var t = step.testimonialByGender ? step.testimonialByGender[userGender] : step.testimonial;
+    if(t){
+      html += '<div class="testimonial"><img src="'+t.img+'" alt="'+t.name+'">' +
+        '<div><div class="name">'+t.name+'</div><div class="loc">'+t.loc+'</div>' +
+        '<div class="quote">'+t.quote+'</div></div></div>';
+    }
+    html += '<button class="btn-continue" data-action="continue">'+step.continueLabel+'</button>';
+    return html;
+  }
+
+  function renderLoading(){
+    return '<div class="loading-wrap">' +
+      '<div class="loading-ring" id="loadRing" style="--pct:0"><div class="loading-pct" id="loadPct">0%</div></div>' +
+      '<div class="loading-title">Estou analisando as suas respostas e gerando o seu protocolo personalizado.</div>' +
+      '<div class="loading-status" id="loadStatus">Estamos analisando suas respostas</div>' +
+    '</div>';
+  }
+
+  function sliderRow(label, pct, color){
+    return '<div class="slider-row">' +
+      '<div class="slabel"><span>'+label+'</span><span>'+pct+'%</span></div>' +
+      '<div class="strack"><div class="sfill '+color+'" style="width:'+pct+'%"></div></div>' +
+    '</div>';
+  }
+
+  function renderAnalysis(){
+    return '' +
+      '<div style="border-radius:1rem;overflow:hidden;margin-bottom:1.1rem"><img src="'+IMG+'lg-jGYOH-remedios-video-para-facebook.png" alt="Remédios vs Nosso Protocolo de Preparação"></div>' +
+      '<p class="offer-p" style="margin-bottom:1.1rem">Abaixo está a análise da sua situação atual, baseada nas suas respostas. 📍</p>' +
+      sliderRow("Chances de possuir parasitas inflamatórias", 95, "red") +
+      sliderRow("Chances das dores piorarem nos próximos meses", 80, "red") +
+      sliderRow("Chances de perder a liberdade de se mover", 88, "red") +
+      sliderRow("Chances de aparecer outra dor em outra região do corpo", 95, "red") +
+      sliderRow("Chances de se livrar das dores sem a desparasitação", 5, "red") +
+      sliderRow("Chances de acabar com todas as dores no corpo com a desparasitação", 100, "green") +
+      sliderRow("Chances de eliminar parasita em 2 dias", 95, "green") +
+      sliderRow("Chances de eliminar parasitas por completo", 100, "green") +
+      '<p class="offer-p" style="margin:1.1rem 0 .2rem"><strong>Possível agente parasitário</strong> de acordo com os seus sintomas:</p>' +
+      '<div class="agent-name">Ascaris lumbricoides</div>' +
+      '<div style="border-radius:1rem;overflow:hidden;margin-bottom:1.1rem"><img src="'+IMG+'lg-hywsc-e99378d8-98c9-4094-9718-f70202ad.jpg" alt="Parasita"></div>' +
+      '<div class="attention-card">' +
+        '<h3>⚠️ Atenção !</h3>' +
+        '<p>No nosso Protocolo, você pode ficar tranquilo! <b>Nenhum verme ou parasita sairá vivo</b> de forma incômoda. Eles são eliminados <b>já mortos e desmanchados,</b> quase imperceptíveis. ☺️</p>' +
+      '</div>' +
+      '<p class="offer-p" style="margin:1.2rem 0"><strong style="color:var(--green)">A Desparasitação ocorrerá primeiramente</strong> através de uma batida de gengibre com um ingrediente secreto facilmente encontrado nos mercados e pouco utilizado.</p>' +
+      '<div style="border-radius:1rem;overflow:hidden;margin-bottom:1.1rem"><img src="'+IMG+'md-tctdR-chatgpt-image-8-de-out-de-2025-23-43-32.png" alt="Smoothie de gengibre"></div>' +
+      '<button class="btn-continue" data-action="continue">Gerar Protocolo de Tratamento! ✅</button>';
+  }
+
+  function renderOffer(){
+    return '<div class="offer-page">' +
+      '<span class="offer-badge">🤩 Protocolo Gerado com SUCESSO!</span>' +
+      '<div style="border-radius:1rem;overflow:hidden"><img src="'+IMG+'lg-zjkec-c4c5f3b8-0d5f-40f4-b95f-e20fb9ec.jpg" alt="O seu protocolo está pronto"></div>' +
+      '<h1 class="offer-h1">Acaba com todas as dores em 9 dias com esta bebida caseira feita com apenas 2 ingredientes naturais!</h1>' +
+      '<p class="offer-p">A preparação revelada por especialistas em saúde articular, com as principais ervas anti-inflamatórias e cuidados que ajudam a acabar com todas as dores no corpo, melhorando sua mobilidade e qualidade de vida</p>' +
+      '<p class="offer-p"><em>sem remédios, sem cirurgia, e com resultados visíveis mesmo após os 70 anos…</em></p>' +
+
+      '<div class="ba-grid">' +
+        '<div class="ba-card"><img src="'+IMG+'md-6BedX-chatgpt-image-9-de-out-de-2025-19-02-53.png" alt="Antes"><div class="cap">Antes</div></div>' +
+        '<div class="ba-card"><img src="'+IMG+'md-PfvZ3-design-sem-nome-23.png" alt="Depois"><div class="cap">Depois</div></div>' +
+      '</div>' +
+      '<div class="ba-note"><div>Este é você sofrendo com os parasitas.</div><div>Este é você livre das dores.</div></div>' +
+
+      '<div>' +
+        '<div class="q-title" style="margin-top:0">Escute o Áudio. Irei te explicar como funciona o Protocolo desparasitação Articular. 👇</div>' +
+        audioWidget(AUD+"jP8rE-audio-3-articular-ultimo.mp3", "00:35") +
+      '</div>' +
+
+      '<div class="attention-card">' +
+        '<h3>Atenção</h3>' +
+        '<p>Este protocolo foi cuidadosamente desenvolvido para você que sofre com as dores e fariam de tudo para recuperar o controle do seu corpo, dormir melhor e se sentir liberto novamente.</p>' +
+        '<ul class="check-list">' +
+          '<li>✅ Então, se você convive com sintomas como dores ao se agachar, ao andar ou mesmo durante o dia a dia...</li>' +
+          '<li>✅ Se já não dorme mais uma noite inteira por causa das dores...</li>' +
+          '<li>✅ Ou se sente que seu desempenho do seu corpo não é mais o mesmo — e os médicos dizem que "é normal para a sua idade"...</li>' +
+        '</ul>' +
+        '<p>E você não aguenta mais viver limitado, com medo de depender de fraldas, sondas ou cirurgia…</p>' +
+        '<p><strong>Então o protocolo natural de 9 dias foi feito pra você.</strong></p>' +
+      '</div>' +
+
+      '<div class="price-card">' +
+        '<ul class="price-items">' +
+          '<li><span>✅ Preparação para desparasitação</span><span>R$37,90</span></li>' +
+          '<li><span>✅ Desparasitação completa</span><span>R$57,00</span></li>' +
+          '<li><span>✅ Acompanhamento Individual</span><span>R$97,00</span></li>' +
+          '<li><span>✅ Guia alimentar contra parasitas</span><span>R$27,00</span></li>' +
+          '<li><span>✅ Tira dúvidas com a equipe</span><span>R$29,90</span></li>' +
+          '<li><span>✅ Manutenção anual do protocolo</span><span>R$49,99</span></li>' +
+          '<li><span>✅ Receita para desparasitação articular em 9 dias</span><span>R$97,00</span></li>' +
+        '</ul>' +
+        '<div class="price-total">' +
+          '<span class="old">Valor total: R$395,00</span>' +
+          '<span class="lead">Por apenas</span>' +
+          '<div class="big">R$ 37,90</div>' +
+        '</div>' +
+        '<a class="btn-continue" href="'+CHECKOUT_URL+'" target="_blank" rel="noopener" data-action="checkout">Acessar meu Protocolo Agora! ✅</a>' +
+        '<div class="price-perks">' +
+          '<div><b>✅ Pagamento Único</b><span>Sem mensalidades.</span></div>' +
+          '<div><b>✅ Acesso Imediato</b><span>Acesso imediato após o pagamento.</span></div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="guarantee-banner"><img src="'+IMG+'lg-zg9u8-sem-nome-1200-x-628-px-200-x-100-px-1.png" alt="180 dias de garantia"></div>' +
+
+      videoEmbed("3kvlzN7mt1E", "Depoimento Ana Dores Articulares") +
+
+      '<div>' +
+        '<div class="q-title" style="margin-top:0">Nas primeiras semanas seguindo nosso protocolo, você vai…</div>' +
+        '<ul class="weeks-list">' +
+          '<li>Sentir a sua mobilidade melhor, com mais facilidade e menos esforço.</li>' +
+          '<li>Dormir melhor, sem precisar se revirar várias vezes durante a noite.</li>' +
+          '<li>Perceber o retorno gradual da sua qualidade de vida, até se libertar totalmente das dores.</li>' +
+        '</ul>' +
+      '</div>' +
+
+      '<div class="test180">' +
+        '<div class="t1">TESTE 180 DIAS</div>' +
+        '<div class="t2">sem compromisso</div>' +
+        '<div class="t3">por apenas 5x</div>' +
+        '<div class="t4">R$ 8,27</div>' +
+        '<a class="btn-continue" href="'+CHECKOUT_URL+'" target="_blank" rel="noopener" data-action="checkout">Acessar meu Protocolo Agora! ✅</a>' +
+      '</div>' +
+
+      '<div class="testimonial"><img src="'+IMG+'xs-B7gZj-download-4.jpg" alt="Paulo Nascimento">' +
+        '<div><div class="name">Paulo Nascimento</div><div class="loc">São Paulo SP</div>' +
+        '<div class="quote">Tinha artrose no joelho, e eu rompi o meu ligamento do joelho. E eu nunca pensei que uma simples Desparasitação poderia me curar, sendo que eu já investi centenas de reais com suplementos e pomadas!</div></div></div>' +
+
+      '<div class="testimonial"><img src="'+IMG+'xs-zCh5T-download-6.jpg" alt="Teresa Ferreira">' +
+        '<div><div class="name">Teresa Ferreira</div><div class="loc">Belo Horizonte MG</div>' +
+        '<div class="quote">Eu era conhecida como Maria das Dores pois eu tinha Fibromialgia, Bico de papagaio e tinha dores terríveis nos ombros, mãos e pernas também, e depois que eu completei o Protocolo, fiquei totalmente livre, acordei em uma manhã sem nenhuma dor, estou assim até hoje</div></div></div>' +
+
+      '<div class="testimonial"><img src="'+IMG+'xs-nCC6P-file-2025-10-11-222951.png" alt="Antônio Costa">' +
+        '<div><div class="name">Antônio Costa</div><div class="loc">Parnaíba PI</div>' +
+        '<div class="quote">Já tive que tomar injeção, e tinha cirurgia marcada para minhas costas L1, L2, L3 e L4, estava com medo e antes quis tentar uma última tentativa, que foi o tratamento do Doutor Rodrigo. Eu não acreditei no início, minhas dores simplesmente sumiram de uma semana para a outra, devo toda minha gratidão a equipe do Protocolo, muito obrigado</div></div></div>' +
+
+      '<div>' +
+        '<p class="offer-p" style="margin-bottom:.8rem">Você também vai receber, de forma gratuita, o "Guia Essencial da Mobilidade Duradoura", com conteúdos como:</p>' +
+        '<span class="bonus-label">CONTEÚDO GRAVADO POR ESPECIALISTAS</span>' +
+        '<ul class="check-list" style="margin-top:.8rem">' +
+          '<li>✅ Os principais inimigos ocultos na sua rotina que estão roubando sua energia e sua flexibilidade sem que você perceba.</li>' +
+          '<li>✅ Hábitos simples e naturais que ajudam a restaurar o movimento livre e a leveza no seu dia a dia.</li>' +
+          '<li>✅ Como identificar sinais silenciosos de tensão e inflamação crônica, mesmo sem visitas constantes a especialistas.</li>' +
+          '<li>✅ Estratégias naturais para fortalecer suas articulações, reduzir o estresse e recuperar sua confiança para viver sem limites.</li>' +
+        '</ul>' +
+        '<a class="btn-continue" href="'+CHECKOUT_URL+'" target="_blank" rel="noopener" data-action="checkout">Acessar meu Protocolo Agora! ✅</a>' +
+      '</div>' +
+
+      '<div>' +
+        '<p class="offer-p" style="margin-bottom:.9rem">Você também vai receber um presente surpresa, totalmente gratuito, ao entrar hoje para o grupo de pessoas que decidiram acabar com suas dores ainda esse mês!</p>' +
+        '<div class="gift-card"><img src="'+IMG+'lg-hz5nl-caixa-presente-realista-tojcj7i2yz.webp" alt="Presente surpresa"></div>' +
+        '<a class="btn-continue" href="'+CHECKOUT_URL+'" target="_blank" rel="noopener" data-action="checkout" style="margin-top:.9rem">Acessar meu Protocolo Agora! ✅</a>' +
+      '</div>' +
+
+      '<div class="offer-final">' +
+        '<p><strong>Quantas vezes você já ouviu que é normal conviver com isso na sua idade?</strong></p>' +
+        '<p>A verdade é que o seu corpo ainda responde — ele só precisa do estímulo certo no momento certo.</p>' +
+        '<p>🌿 Este protocolo natural já ajudou centenas de pessoas que não conseguiam sequer dar 2 passos sem uma muleta, voltarem a correr e a se mexer com total flexibilidade, sem nenhuma dor.</p>' +
+        '<p>E agora, pode ser a sua vez.</p>' +
+        '<p>✨ Não aceite que a idade defina sua qualidade de vida.</p>' +
+        '<p>Clique no botão abaixo e comece hoje a retomar o controle da sua mobilidade.</p>' +
+        '<a class="btn-continue" href="'+CHECKOUT_URL+'" target="_blank" rel="noopener" data-action="checkout">Acessar meu Protocolo Agora! ✅</a>' +
+      '</div>' +
+
+      '<div class="risk-card"><img src="'+IMG+'lg-ln12j-inserir-um-titulo-200-x-350-px-200-x-250-px-1.png" alt="Seu risco é zero"></div>' +
+    '</div>';
+  }
+
+  /* ---------------- Hook screen ---------------- */
+  function renderHook(){
+    return '<div class="hook-page">' +
+      '<h1 class="hook-headline">' +
+        '<span class="tag-urgent">URGENTE:</span> ' +
+        '<span class="hl-green">TRUQUE NATURAL CASEIRO DE 9 DIAS ESTÁ TIRANDO AS DORES NAS ARTICULAÇÕES</span> ' +
+        'E ELIMINANDO A <span class="hl-underline">INFLAMAÇÃO CAUSADA POR PARASITAS!</span>' +
+      '</h1>' +
+      '<p class="hook-sub">Pessoas com mais de 50 anos, estão se livrando de todas as dores articulares no corpo, voltando a correr, se agachar, subir escadas e a dormir melhor. Tudo graças a uma simples receita natural que elimina o parasita que corrói as articulações</p>' +
+      '<div class="hook-img"><img src="'+IMG+'lg-2U0ef-fungo-350-x-350-px-video-para-facebook.png" alt="Imagem"></div>' +
+      '<button class="btn-continue" data-action="start">QUERO APRENDER TAMBÉM !</button>' +
+    '</div>';
+  }
+
+  /* ---------------- Main render ---------------- */
+  function render(){
+    var app = document.getElementById("app");
+    window.scrollTo(0,0);
+
+    if(current === -1){
+      app.innerHTML = renderHook();
+      return;
+    }
+
+    var step = STEPS[current];
+    var body = "";
+
+    if(step.type === "gender"){
+      body += '<div class="q-title">'+step.title+'</div><div class="q-sub">'+step.sub+'</div>';
+      body += '<div class="gender-grid">' + step.options.map(function(o,i){
+        return '<button class="gender-card" data-action="choose" data-idx="'+i+'">' +
+          '<img src="'+o.img+'" alt="'+o.label+'">' +
+          '<div class="label">'+o.label+'<span class="chev">›</span></div></button>';
+      }).join("") + '</div>';
+    } else if(step.type === "image-choice"){
+      var icImg = step.imageByGender ? step.imageByGender[userGender] : step.image;
+      body += '<div style="border-radius:1rem;overflow:hidden;margin-bottom:1rem"><img src="'+icImg+'" alt="Imagem"></div>';
+      body += '<div class="options">' + step.options.map(function(label,i){
+        return '<button class="opt-solid" data-action="choose" data-idx="'+i+'">'+label+'</button>';
+      }).join("") + '</div>';
+    } else if(step.type === "choice"){
+      body += '<div class="q-title">'+step.title+'</div>';
+      if(step.sub) body += '<div class="q-sub">'+step.sub+'</div>';
+      body += optionsHtml(step);
+    } else if(step.type === "checkbox"){
+      body += '<div class="q-title">'+step.title+'</div>';
+      if(step.sub) body += '<div class="q-sub">'+step.sub+'</div>';
+      body += checkboxHtml(step);
+    } else if(step.type === "article"){
+      body += renderArticle();
+    } else if(step.type === "audio"){
+      body += renderAudioStep(step);
+    } else if(step.type === "commit"){
+      body += '<div class="q-title">'+step.title+'</div>';
+      if(step.sub) body += '<div class="q-sub">'+step.sub+'</div>';
+      body += optionsHtml({options:step.options, style:"solid"});
+      body += '<div class="wa-carousel" id="waCarousel">' +
+        step.carousel.map(function(src,i){ return '<div class="wa-slide'+(i===0?' active':'')+'"><img src="'+src+'"></div>'; }).join("") +
+        '</div>' +
+        '<div class="wa-dots">' + step.carousel.map(function(_,i){ return '<button data-wa="'+i+'" class="'+(i===0?'active':'')+'"></button>'; }).join("") + '</div>';
+    } else if(step.type === "loading"){
+      body += renderLoading();
+    } else if(step.type === "analysis"){
+      body += renderAnalysis();
+    } else if(step.type === "offer"){
+      body += renderOffer();
+    }
+
+    var header = (step.type === "offer" || step.type === "analysis") ? renderHeaderNoProgress() : renderHeader(step);
+    app.innerHTML = header + body;
+
+    if(step.type === "loading") runLoading();
+    if(step.type === "commit") wireCarousel();
+    hydrateAudioWidgets(app);
+  }
+
+  function wireCarousel(){
+    var wrap = document.getElementById("waCarousel");
+    if(!wrap) return;
+  }
+
+  function runLoading(){
+    var pct = 0;
+    var ring = document.getElementById("loadRing");
+    var pctEl = document.getElementById("loadPct");
+    var statusEl = document.getElementById("loadStatus");
+    var messages = ["Estamos analisando suas respostas","Montando protocolo personalizado","Gerando seu protocolo..."];
+    var msgIdx = 0;
+    var timer = setInterval(function(){
+      pct += 4;
+      if(pct > 100) pct = 100;
+      if(ring) ring.style.setProperty("--pct", pct);
+      if(pctEl) pctEl.textContent = pct + "%";
+      if(pct % 33 === 0 && statusEl){ msgIdx = (msgIdx+1) % messages.length; statusEl.textContent = messages[msgIdx]; }
+      if(pct >= 100){
+        clearInterval(timer);
+        setTimeout(function(){ current++; render(); }, 500);
+      }
+    }, 130);
+  }
+
+  var activeAudio = null;
+  var WA_PLAY_ICON = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+  var WA_PAUSE_ICON = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+
+  function resetAudioWidget(btn, bubble){
+    btn.innerHTML = WA_PLAY_ICON;
+    if(!bubble) return;
+    var dot = bubble.querySelector(".wa-dot");
+    if(dot) dot.style.left = "0%";
+    bubble.querySelectorAll(".wa-bars span.wa-played").forEach(function(s){ s.classList.remove("wa-played"); });
+    var timeEl = bubble.querySelector('[data-role="audio-time"]');
+    if(timeEl) timeEl.textContent = timeEl.getAttribute("data-original-len") || timeEl.textContent;
+  }
+
+  function toggleAudio(btn){
+    var src = btn.getAttribute("data-src");
+    var bubble = btn.closest(".wa-bubble");
+    var barsContainer = bubble ? bubble.querySelector(".wa-bars") : null;
+    var bars = barsContainer ? Array.prototype.slice.call(barsContainer.querySelectorAll("span:not(.wa-dot)")) : [];
+    var dot = barsContainer ? barsContainer.querySelector(".wa-dot") : null;
+    var timeEl = bubble ? bubble.querySelector('[data-role="audio-time"]') : null;
+
+    if(activeAudio && activeAudio._srcKey === src && !activeAudio.paused){
+      activeAudio.pause();
+      btn.innerHTML = WA_PLAY_ICON;
+      return;
+    }
+    if(activeAudio){
+      activeAudio.pause();
+      if(activeAudio._btn && activeAudio._bubble) resetAudioWidget(activeAudio._btn, activeAudio._bubble);
+    }
+
+    activeAudio = new Audio(src);
+    activeAudio._srcKey = src;
+    activeAudio._btn = btn;
+    activeAudio._bubble = bubble;
+    btn.innerHTML = WA_PAUSE_ICON;
+    activeAudio.play().catch(function(){});
+
+    activeAudio.addEventListener("timeupdate", function(){
+      var t = Math.floor(activeAudio.currentTime);
+      var m = Math.floor(t/60), s = t%60;
+      if(timeEl) timeEl.textContent = (m<10?"0":"")+m+":"+(s<10?"0":"")+s;
+
+      if(activeAudio.duration && isFinite(activeAudio.duration)){
+        var pct = activeAudio.currentTime / activeAudio.duration;
+        if(dot) dot.style.left = (pct*100) + "%";
+        if(bars.length){
+          var playedCount = Math.round(pct * bars.length);
+          bars.forEach(function(b, i){ b.classList.toggle("wa-played", i < playedCount); });
+        }
+      }
+    });
+    activeAudio.addEventListener("ended", function(){
+      resetAudioWidget(btn, bubble);
+      activeAudio = null;
+    });
+  }
+
+  document.addEventListener("click", function(e){
+    var t = e.target.closest("[data-action]");
+    if(t){
+      var action = t.getAttribute("data-action");
+
+      if(action === "start"){ current = 0; render(); return; }
+
+      if(action === "back"){
+        if(current > 0){ current--; render(); }
+        else if(current === 0){ current = -1; render(); }
+        return;
+      }
+
+      if(action === "choose"){
+        var stp = STEPS[current];
+        if(stp && stp.id === "gender"){
+          userGender = parseInt(t.getAttribute("data-idx"), 10) || 0;
+        }
+        current++; render(); return;
+      }
+
+      if(action === "toggle"){
+        var step = STEPS[current];
+        var idx = t.getAttribute("data-idx");
+        checkboxState[step.id] = checkboxState[step.id] || {};
+        checkboxState[step.id][idx] = !checkboxState[step.id][idx];
+        render();
+        return;
+      }
+
+      if(action === "continue"){
+        current++; render(); return;
+      }
+
+      if(action === "toggle-audio"){
+        toggleAudio(t);
+        return;
+      }
+    }
+
+    var waBtn = e.target.closest("[data-wa]");
+    if(waBtn){
+      var idx2 = waBtn.getAttribute("data-wa");
+      var slides = document.querySelectorAll(".wa-slide");
+      var dots = document.querySelectorAll(".wa-dots button");
+      slides.forEach(function(s,i){ s.classList.toggle("active", i==idx2); });
+      dots.forEach(function(d,i){ d.classList.toggle("active", i==idx2); });
+    }
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>
