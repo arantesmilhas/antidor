@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Parabéns pela sua escolha!</title>
+<meta name="description" content="Selecione qual método de tratamento você prefere e marque as regiões onde você mais sente dor." />
+<meta name="theme-color" content="#f0fdf4" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --featured:#10b981;
+    --featured-hover:#1CBD87;
+    --title:#059669;
+    --text:#6b7280;
+    --bg:#f0fdf4;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:Inter,"sans serif",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .main-content{
+    display:flex;flex-direction:column;gap:1rem;justify-content:space-between;
+    padding:.75rem;min-height:95svh;
+  }
+  @media(min-width:768px){ .main-content{padding:1.25rem;gap:1.5rem;} }
+
+  /* top bar */
+  .topbar{display:grid;gap:.75rem;align-items:flex-start;width:100%;z-index:50;}
+  @media(min-width:768px){ .topbar{display:flex;gap:1rem;justify-content:space-between;} }
+  .backbtn{
+    display:flex;align-items:center;gap:.5rem;font-size:.875rem;color:#059669;
+    background:none;border:0;cursor:pointer;padding:0;font-family:inherit;
+  }
+  .backbtn svg{width:1em;height:1em;margin-top:2px;}
+  .topbar .left{display:flex;flex:1;align-items:flex-start;justify-content:space-between;gap:1rem;}
+  @media(min-width:768px){ .topbar .left{justify-content:flex-start;} }
+  .progress-wrap{width:100%;display:grid;gap:1rem;max-width:28rem;}
+  .progress-wrap{padding-top:.5rem;}
+  .progress-track{position:relative;border-radius:9999px;overflow:hidden;width:100%;height:8px;}
+  .progress-track .bgbar{position:absolute;top:0;left:0;height:100%;width:100%;background:var(--featured);opacity:.1;}
+  .progress-track .fill{position:absolute;top:0;left:0;height:100%;background:var(--featured);
+    transition:width .7s cubic-bezier(.4,0,.2,1);width:20%;}
+  .topbar .right{display:none;}
+  @media(min-width:768px){ .topbar .right{display:block;flex:1;} }
+
+  .container{width:100%;position:relative;margin:0 auto;max-width:28rem;}
+  .rowwrap{display:flex;flex-direction:row;flex-wrap:wrap;margin-left:-.2rem;margin-right:-.2rem;}
+  .layer{position:relative;min-width:0;padding:.2rem;flex-basis:100%;}
+
+  .content{word-break:break-word;padding-top:.5rem;padding-bottom:.5rem;}
+  .content h1,.content h2,.content h3{
+    color:var(--title);margin:0;font-weight:700;
+  }
+  .content h1{font-size:2rem;line-height:1.15;}
+  .content h2{font-size:1.5rem;line-height:1.2;}
+  .content h3{font-size:1.17rem;line-height:1.3;}
+  .content p{margin:12px 0 0;font-size:1rem;line-height:1.4;color:var(--text);}
+  .content h1+p,.content h2+p{margin-top:12px;}
+  .content p+p{margin-top:12px;}
+  .content strong{font-weight:700;}
+  .ta-center{text-align:center;}
+
+  .btn{
+    display:block;width:100%;border:0;cursor:pointer;
+    background:var(--featured);color:#fff;border-radius:16px;
+    padding:8.8px 16px;min-height:65px;
+    font-family:inherit;font-size:1rem;font-weight:500;line-height:24px;
+    transition:background-color .15s ease,transform .1s ease;
+  }
+  .btn:hover{background:var(--featured-hover);}
+  .btn:active{transform:scale(.99);}
+  .spacer-1{height:1rem;}
+  .spacer-3{height:3rem;}
+  .footer-space{padding-top:2.5rem;padding-bottom:2.5rem;}
+  .hidden{display:none !important;}
+
+  /* ===== mapa frontal ===== */
+  #mapa{width:100%;display:block;}
+  #mapa .md-card{
+    background:#ffffff;border:1px solid rgba(229,231,235,1);border-radius:16px;padding:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);max-width:980px;width:100%;margin:0 auto;
+  }
+  #mapa .md-svgWrap{width:min(520px,100%);aspect-ratio:520/800;display:block;margin:0 auto;}
+  #mapa svg{width:100%;height:100%;display:block;margin:0 auto;background:transparent;overflow:visible;}
+  #mapa .region{
+    fill:rgba(148,163,184,.18);stroke:rgba(17,24,39,.35);stroke-width:1.5;cursor:pointer;transition:.12s ease;
+  }
+  #mapa .region:hover{fill:rgba(99,102,241,.25);}
+  #mapa .region.is-selected{fill:rgba(239,68,68,.55);stroke:rgba(17,24,39,.65);}
+  @media(max-width:520px){
+    #mapa .md-card{padding:12px;}
+    #mapa .md-svgWrap{width:min(380px,100%);}
+  }
+
+  /* ===== mapa costas ===== */
+  [data-mapa-dor="true"]{margin:12px 0;display:flex;justify-content:center;}
+  [data-mapa-dor="true"] .wrap{
+    width:min(520px,100%);background:#fff;border-radius:16px;padding:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+  }
+  [data-mapa-dor="true"] .title{
+    font:700 14px/1.2 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#0f172a;margin:0 0 10px;text-align:left;
+  }
+  [data-mapa-dor="true"] svg{width:100%;height:auto;display:block;background:transparent;}
+  [data-mapa-dor="true"] .r{
+    fill:rgba(148,163,184,.22);stroke:rgba(15,23,42,.25);stroke-width:1;cursor:pointer;
+  }
+  [data-mapa-dor="true"] .r.active{fill:rgba(239,68,68,.55);stroke:rgba(239,68,68,.75);}
+  [data-mapa-dor="true"] .outline{
+    fill:none;stroke:rgba(15,23,42,.55);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;
+  }
+  [data-mapa-dor="true"] .legend{font-size:12px;font-weight:600;fill:#475569;}
+  [data-mapa-dor="true"] .legendTitle{font-size:14px;font-weight:600;fill:#334155;}
+
+  /* ===== loader ===== */
+  .loader-head{
+    display:flex;justify-content:space-between;padding-bottom:.25rem;
+    font-weight:600;font-size:.875rem;color:var(--title);
+  }
+  .loader-track{display:flex;position:relative;overflow:hidden;background:rgb(233,237,234);border-radius:12px;}
+  .loader-track .progress{height:12px;width:0%;border-radius:12px;background:var(--featured);
+    transition:width .05s linear;min-width:1px;}
+  .lottie-box{width:300px;height:300px;max-width:100%;display:block;margin:0 auto;}
+</style>
+<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+</head>
+<body>
+<main>
+  <div class="main-content">
+    <!-- topo -->
+    <div class="topbar">
+      <div class="left">
+        <button type="button" class="backbtn" id="backBtn" aria-label="Voltar">
+          <svg fill="currentColor" aria-hidden="true" viewBox="0 0 448 512"><path d="M229.9 473.899l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L94.569 282H436c6.627 0 12-5.373 12-12v-28c0-6.627-5.373-12-12-12H94.569l155.13-155.13c4.686-4.686 4.686-12.284 0-16.971L229.9 38.101c-4.686-4.686-12.284-4.686-16.971 0L3.515 247.515c-4.686 4.686-4.686 12.284 0 16.971L212.929 473.9c4.686 4.686 12.284 4.686 16.971-.001z"></path></svg>
+        </button>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-track">
+          <div class="bgbar"></div>
+          <div class="fill" id="progressFill" style="width:20%"></div>
+        </div>
+      </div>
+      <div class="right"></div>
+    </div>
+
+    <!-- ETAPA 0 -->
+    <section class="container step" id="step-0" data-progress="20">
+      <div class="rowwrap">
+        <div class="layer">
+          <div class="content">
+            <h1 class="ta-center">Parabéns pela sua escolha!</h1>
+            <p class="ta-center">Selecione qual método de tratamento você prefere.</p>
+          </div>
+        </div>
+        <div class="layer">
+          <button class="btn" data-go="1">Quero a fórmula personalizada com o tratamento Biodirecional</button>
+        </div>
+        <div class="layer"><div class="spacer-3"></div></div>
+        <div class="layer">
+          <button class="btn" data-go="4">Quero seguir com a formula padrão</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ETAPA 1 - frente -->
+    <section class="container step hidden" id="step-1" data-progress="40">
+      <div class="rowwrap">
+        <div class="layer">
+          <div class="content">
+            <h1 class="ta-center">Clique onde você mais sente dor</h1>
+            <p class="ta-center"><strong>Selecione no máximo 3 regiões</strong>.</p>
+            <p class="ta-center">Se sente dores somente nas costas, apenas clique no botão ''IR PARA AS COSTAS''.</p>
+          </div>
+        </div>
+        <div class="layer">
+          <div id="mapa">
+            <div class="md-card">
+              <div class="md-svgWrap">
+                <svg viewBox="0 0 520 800" preserveAspectRatio="xMidYMin meet">
+                  <g>
+                    <ellipse cx="260" cy="92" rx="52" ry="62" class="region" data-id="cabeca" data-label="Cabeça" tabindex="0"></ellipse>
+                    <rect x="238" y="155" width="44" height="34" rx="14" class="region" data-id="pescoco" data-label="Pescoço" tabindex="0"></rect>
+                    <ellipse cx="178" cy="205" rx="44" ry="30" class="region" data-id="ombro_esq" data-label="Ombro esquerdo" tabindex="0"></ellipse>
+                    <ellipse cx="342" cy="205" rx="44" ry="30" class="region" data-id="ombro_dir" data-label="Ombro direito" tabindex="0"></ellipse>
+                    <ellipse cx="128" cy="290" rx="38" ry="58" class="region" data-id="braco_esq" data-label="Braço esquerdo" tabindex="0"></ellipse>
+                    <ellipse cx="392" cy="290" rx="38" ry="58" class="region" data-id="braco_dir" data-label="Braço direito" tabindex="0"></ellipse>
+                    <ellipse cx="122" cy="385" rx="34" ry="54" class="region" data-id="antebraco_esq" data-label="Antebraço esquerdo" tabindex="0"></ellipse>
+                    <ellipse cx="398" cy="385" rx="34" ry="54" class="region" data-id="antebraco_dir" data-label="Antebraço direito" tabindex="0"></ellipse>
+                    <ellipse cx="130" cy="468" rx="28" ry="20" class="region" data-id="mao_esq" data-label="Mão esquerda" tabindex="0"></ellipse>
+                    <ellipse cx="390" cy="468" rx="28" ry="20" class="region" data-id="mao_dir" data-label="Mão direita" tabindex="0"></ellipse>
+                    <ellipse cx="260" cy="255" rx="88" ry="70" class="region" data-id="peito" data-label="Peito/Tórax" tabindex="0"></ellipse>
+                    <ellipse cx="260" cy="355" rx="76" ry="116" class="region" data-id="abdomen" data-label="Abdômen" tabindex="0"></ellipse>
+                    <ellipse cx="260" cy="505" rx="78" ry="60" class="region" data-id="quadril" data-label="Quadril" tabindex="0"></ellipse>
+                    <ellipse cx="224" cy="600" rx="46" ry="90" class="region" data-id="coxa_esq" data-label="Coxa esquerda" tabindex="0"></ellipse>
+                    <ellipse cx="296" cy="600" rx="46" ry="90" class="region" data-id="coxa_dir" data-label="Coxa direita" tabindex="0"></ellipse>
+                    <ellipse cx="224" cy="675" rx="20" ry="14" class="region" data-id="joelho_esq" data-label="Joelho esquerdo" tabindex="0"></ellipse>
+                    <ellipse cx="296" cy="675" rx="20" ry="14" class="region" data-id="joelho_dir" data-label="Joelho direito" tabindex="0"></ellipse>
+                    <ellipse cx="224" cy="725" rx="24" ry="55" class="region" data-id="perna_esq" data-label="Perna esquerda" tabindex="0"></ellipse>
+                    <ellipse cx="296" cy="725" rx="24" ry="55" class="region" data-id="perna_dir" data-label="Perna direita" tabindex="0"></ellipse>
+                    <ellipse cx="222" cy="790" rx="30" ry="10" class="region" data-id="pe_esq" data-label="Pé esquerdo" tabindex="0"></ellipse>
+                    <ellipse cx="298" cy="790" rx="30" ry="10" class="region" data-id="pe_dir" data-label="Pé direito" tabindex="0"></ellipse>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="layer">
+          <button class="btn" data-go="2">Ir para as costas. ➡️</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ETAPA 2 - costas -->
+    <section class="container step hidden" id="step-2" data-progress="60">
+      <div class="rowwrap">
+        <div class="layer">
+          <div class="content">
+            <h1 class="ta-center">Clique onde você mais sente dor</h1>
+            <p class="ta-center"><strong>Selecione no máximo 3 regiões</strong>.</p>
+            <p class="ta-center">Se esqueceu uma região na parte da frente clique no botão (<strong>Voltar para parte da frente.</strong>)</p>
+          </div>
+        </div>
+        <div class="layer">
+          <div data-mapa-dor="true">
+            <div class="wrap">
+              <p class="title">Clique nas áreas das costas para marcar dor</p>
+              <svg viewBox="0 0 420 560" aria-label="Mapa de dor - costas">
+                <defs>
+                  <clipPath id="bodyClip">
+                    <circle cx="210" cy="78" r="46"></circle>
+                    <path d="M110,150 C80,155 58,180 55,210 C52,245 68,270 86,292 C98,308 105,330 104,358 C102,408 115,460 145,498 C170,530 197,542 210,544 C223,542 250,530 275,498 C305,460 318,408 316,358 C315,330 322,308 334,292 C352,270 368,245 365,210 C362,180 340,155 310,150 C280,145 252,150 235,165 C225,174 218,180 210,180 C202,180 195,174 185,165 C168,150 140,145 110,150 Z"></path>
+                  </clipPath>
+                </defs>
+                <g clip-path="url(#bodyClip)">
+                  <path class="r" data-id="pescoco" d="M190 120 C198 108 222 108 230 120 L230 170 C222 176 198 176 190 170 Z"></path>
+                  <path class="r" data-id="escapula_esq" d="M120 190 C160 175 170 185 188 212 L186 275 C165 288 145 282 118 260 Z"></path>
+                  <path class="r" data-id="escapula_dir" d="M300 190 C260 175 250 185 232 212 L234 275 C255 288 275 282 302 260 Z"></path>
+                  <path class="r" data-id="dorsal_esq" d="M108 270 C135 295 158 300 178 300 L178 372 C150 372 125 360 104 330 Z"></path>
+                  <path class="r" data-id="dorsal_dir" d="M312 270 C285 295 262 300 242 300 L242 372 C270 372 295 360 316 330 Z"></path>
+                  <path class="r" data-id="lombar_esq" d="M150 372 C162 400 176 420 200 430 L200 520 C180 514 165 500 150 478 C136 456 132 418 136 388 Z"></path>
+                  <path class="r" data-id="lombar_dir" d="M270 372 C258 400 244 420 220 430 L220 520 C240 514 255 500 270 478 C284 456 288 418 284 388 Z"></path>
+                </g>
+                <circle class="outline" cx="210" cy="78" r="46"></circle>
+                <path class="outline" d="M110,150 C80,155 58,180 55,210 C52,245 68,270 86,292 C98,308 105,330 104,358 C102,408 115,460 145,498 C170,530 197,542 210,544 C223,542 250,530 275,498 C305,460 318,408 316,358 C315,330 322,308 334,292 C352,270 368,245 365,210 C362,180 340,155 310,150 C280,145 252,150 235,165 C225,174 218,180 210,180 C202,180 195,174 185,165 C168,150 140,145 110,150 Z"></path>
+                <path class="outline" opacity=".25" d="M210 180 L210 540"></path>
+                <text x="210" y="20" text-anchor="middle" class="legendTitle">Cabeça</text>
+                <text x="210" y="155" text-anchor="middle" class="legend">Nuca</text>
+                <text x="135" y="235" text-anchor="middle" class="legend">Escápula</text>
+                <text x="285" y="235" text-anchor="middle" class="legend">Escápula</text>
+                <text x="130" y="330" text-anchor="middle" class="legend">Dorsal</text>
+                <text x="290" y="330" text-anchor="middle" class="legend">Dorsal</text>
+                <text x="140" y="430" text-anchor="middle" class="legend">Lombar</text>
+                <text x="280" y="430" text-anchor="middle" class="legend">Lombar</text>
+              </svg>
+            </div>
+          </div>
+          <input type="hidden" name="mapa_dor" id="mapaDorInput" value="" />
+        </div>
+        <div class="layer">
+          <button class="btn" data-go="3">Pronto, selecionei as regiões! ➡️</button>
+        </div>
+        <div class="layer">
+          <button class="btn" data-go="1">Voltar para parte da frente. ↩️</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ETAPA 3 - parabéns -->
+    <section class="container step hidden" id="step-3" data-progress="80">
+      <div class="rowwrap">
+        <div class="layer">
+          <div class="content"><h1 class="ta-center">Parabéns! Estamos quase acabando.</h1></div>
+        </div>
+        <div class="layer">
+          <div class="content"><h3 class="ta-center">O método Biodirecional vai priorizar os resultados nas regiões selecionadas.</h3></div>
+        </div>
+        <div class="layer">
+          <div class="content"><h3>A fórmula irá fazer efeito em todo corpo, mas começará pelas regiões que você selecionou.</h3></div>
+        </div>
+        <div class="layer">
+          <div class="content"><h3>Dando um resultado muito mais rápido que o normal.</h3></div>
+        </div>
+        <div class="layer"><div class="spacer-1"></div></div>
+        <div class="layer">
+          <button class="btn" data-go="4">Ótimo! Já selecionei as regiões que quero priorizar os resultados. ➡️</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ETAPA 4 - carregando -->
+    <section class="container step hidden" id="step-4" data-progress="100">
+      <div class="rowwrap">
+        <div class="layer">
+          <div class="content"><h2 class="ta-center">Aguarde a próxima página carregar</h2></div>
+        </div>
+        <div class="layer">
+          <dotlottie-wc class="lottie-box" src="https://lottie.host/5922cbcc-5b58-44f5-8bf5-3f4f6343f80d/R16F8Ks21U.lottie" autoplay loop></dotlottie-wc>
+        </div>
+        <div class="layer">
+          <div class="loader-head">
+            <div>Carregando...</div>
+            <div id="loaderPct">0%</div>
+          </div>
+          <div class="loader-track"><div class="progress" id="loaderBar"></div></div>
+        </div>
+        <div class="layer msg" data-msg="0"><div class="content"><p class="ta-center">Carregando seus dados...</p></div></div>
+        <div class="layer msg hidden" data-msg="1"><div class="content"><p class="ta-center">Separando seus frascos...</p></div></div>
+        <div class="layer msg hidden" data-msg="2"><div class="content"><p class="ta-center">Encaminhando pedido para equipe...</p></div></div>
+        <div class="layer msg hidden" data-msg="3"><div class="content"><p class="ta-center">Vamos enviar você para página de pagamento</p></div></div>
+        <div class="layer msg hidden" data-msg="4"><div class="content"><h3 class="ta-center" style="color:rgb(22,163,74)"><strong>Pronto!</strong></h3></div></div>
+      </div>
+    </section>
+
+    <div class="footer-space"></div>
+  </div>
+</main>
+
+<script>
+(function(){
+  var CHECKOUT = "https://pay.cakto.com.br/3bv7my8";
+  var MAX = 3;
+  var steps = Array.prototype.slice.call(document.querySelectorAll(".step"));
+  var fill = document.getElementById("progressFill");
+  var history = [0];
+  var current = 0;
+
+  function show(i){
+    steps.forEach(function(s,idx){ s.classList.toggle("hidden", idx !== i); });
+    fill.style.width = steps[i].getAttribute("data-progress") + "%";
+    current = i;
+    window.scrollTo({top:0,behavior:"smooth"});
+    if(i === 4) startLoader();
+  }
+
+  document.addEventListener("click", function(e){
+    var b = e.target.closest("[data-go]");
+    if(!b) return;
+    var next = parseInt(b.getAttribute("data-go"),10);
+    history.push(next);
+    show(next);
+  });
+
+  document.getElementById("backBtn").addEventListener("click", function(){
+    if(history.length > 1){ history.pop(); show(history[history.length-1]); }
+  });
+
+  // seleção de regiões (frente e costas)
+  function bindMap(selector, activeClass){
+    var nodes = document.querySelectorAll(selector);
+    Array.prototype.forEach.call(nodes, function(el){
+      function toggle(){
+        var sel = el.parentNode.querySelectorAll("." + activeClass);
+        if(!el.classList.contains(activeClass) && sel.length >= MAX) return;
+        el.classList.toggle(activeClass);
+        saveSelection();
+      }
+      el.addEventListener("click", toggle);
+      el.addEventListener("keydown", function(ev){
+        if(ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); toggle(); }
+      });
+    });
+  }
+  function saveSelection(){
+    var ids = [];
+    document.querySelectorAll("#mapa .region.is-selected").forEach(function(e){ ids.push(e.getAttribute("data-id")); });
+    document.querySelectorAll('[data-mapa-dor="true"] .r.active').forEach(function(e){ ids.push(e.getAttribute("data-id")); });
+    var input = document.getElementById("mapaDorInput");
+    if(input) input.value = ids.join(",");
+    try{ localStorage.setItem("mapa_dor", ids.join(",")); }catch(err){}
+  }
+  bindMap("#mapa .region", "is-selected");
+  bindMap('[data-mapa-dor="true"] .r', "active");
+
+  // loader (fiel ao original: 1% a cada ~133ms, mensagens acumulativas)
+  var loaderStarted = false;
+  function startLoader(){
+    if(loaderStarted) return;
+    loaderStarted = true;
+    var bar = document.getElementById("loaderBar");
+    var pct = document.getElementById("loaderPct");
+    var msgs = Array.prototype.slice.call(document.querySelectorAll(".msg"));
+    var thresholds = [0, 25, 45, 64, 93];
+    var v = 0;
+    msgs.forEach(function(m,i){ m.classList.toggle("hidden", i !== 0); });
+    var timer = setInterval(function(){
+      v += 1;
+      if(v > 100) v = 100;
+      bar.style.width = v + "%";
+      pct.textContent = v + "%";
+      msgs.forEach(function(m,i){ if(v >= thresholds[i]) m.classList.remove("hidden"); });
+      if(v >= 100){
+        clearInterval(timer);
+        setTimeout(function(){
+          window.location.href = CHECKOUT + window.location.search;
+        }, 500);
+      }
+    }, 133);
+  }
+})();
+</script>
+</body>
+</html>

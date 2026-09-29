@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parabéns pela sua decisão!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: #ffffff;
+    color: #121212;
+    font-family: "PT Serif", Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* ===== Headline ===== */
+  .headline {
+    width: 100%;
+    margin: 0 0 24px;
+    font-family: "PT Serif", Georgia, serif;
+    letter-spacing: 1px;
+    line-height: 1.26;
+    text-align: center;
+  }
+  .headline p { margin: 0; text-align: center; }
+  .headline .titulo {
+    color: rgb(0, 144, 14);
+    font-size: 25px;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .headline .texto { color: rgb(18, 18, 18); font-size: 25px; }
+  .headline .texto strong { font-weight: 700; }
+
+  /* ===== Player / VSL ===== */
+  .vsl-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background: #000;
+  }
+  .vsl-ratio {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 */
+  }
+  .vsl-ratio > vturb-smartplayer,
+  .vsl-ratio > video,
+  .vsl-ratio > iframe,
+  .vsl-ratio > * {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  /* Barra de progresso "fake bar" igual à original */
+  .fakebar {
+    width: 100%;
+    height: 10px;
+    background: rgba(61, 133, 198, .25);
+    overflow: hidden;
+  }
+  .fakebar span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: #3D85C6;
+    transition: width .25s linear;
+  }
+  /* Overlay "Clique para ouvir" */
+  .som-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(164, 130, 105, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    cursor: pointer;
+    z-index: 5;
+    text-align: center;
+    padding: 16px;
+  }
+  .som-overlay p {
+    margin: 0;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: clamp(18px, 2.8vw, 35px);
+  }
+  .som-overlay svg { width: clamp(70px, 14vw, 180px); height: auto; fill: #fff; }
+  .som-overlay.hidden { display: none; }
+
+  /* ===== Elementos escondidos até o tempo do delay ===== */
+  .esconder { display: none; }
+  .esconder.revelado { display: block; }
+
+  .foto-oferta {
+    display: block;
+    width: 100%;
+    max-width: 576px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .bloco-cta { width: 100%; text-align: center; }
+
+  .botao-pulsante {
+    background-color: #28a745;
+    color: #fff;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    animation: pulse 1.5s infinite;
+    transition: background-color .3s ease;
+  }
+  .botao-pulsante:hover { background-color: #218838; }
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  @media (max-width: 767px) {
+    .container { padding: 10px; gap: 16px; }
+    .headline .titulo, .headline .texto { font-size: 20px; }
+    .botao-pulsante { font-size: 17px; padding: 16px 22px; width: 100%; max-width: 420px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ================= HEADLINE ================= -->
+  <div class="headline">
+    <p><span class="titulo">Parabéns pela sua decisão!!</span></p>
+    <p><br></p>
+    <p><span class="texto">Você acaba de dar o <strong>primeiro passo para se livrar de vez dos Parasitas Articulares</strong> — com segurança, orientação e resultado real.</span></p>
+    <p><br></p>
+    <p><span class="texto">Assista ao vídeo abaixo para entender como usar seu protocolo da forma certa e acelerar seus resultados.</span></p>
+  </div>
+
+  <!-- ================= VSL COM CÓDIGO VTURB CORRIGIDO ================= -->
+  <div class="vsl-wrapper">
+    <div class="vsl-ratio">
+      <!-- Código VTurb Correto -->
+      <vturb-smartplayer id="vid-6abab8e35f99ef73c24b5c02" style="display: block; margin: 0 auto; width: 100%; "><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 56.20608899297424% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
+      <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/cd42ba67-0c51-4ed3-9598-68fb5cb77894/players/6abab8e35f99ef73c24b5c02/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+
+      <!-- Overlay de som (igual ao original) -->
+      <div class="som-overlay" id="somOverlay">
+        <p>Sua primeira aula já começou</p>
+        <svg viewBox="7.999 9.062 46.75 32.563" xmlns="http://www.w3.org/2000/svg">
+          <path d="M53.249,39.616c-0.186,0-0.371-0.051-0.537-0.157l-43.5-27.75c-0.466-0.297-0.603-0.916-0.306-1.381c0.298-0.466,0.917-0.601,1.381-0.306l43.5,27.75c0.467,0.297,0.604,0.916,0.307,1.381C53.901,39.453,53.579,39.616,53.249,39.616z"/>
+          <path d="M48.896,33.467l1.699,1.085c3.497-7.791,2.073-17.271-4.313-23.659c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414C50.581,18.019,51.913,26.463,48.896,33.467z"/>
+          <path d="M46.926,36.956c-0.612,0.863-1.286,1.695-2.059,2.469c-0.392,0.391-0.392,1.023,0,1.414c0.194,0.195,0.45,0.293,0.707,0.293c0.256,0,0.512-0.098,0.706-0.293c0.878-0.878,1.642-1.824,2.333-2.807L46.926,36.956z"/>
+          <path d="M42.543,29.415l1.777,1.135c1.545-5.315,0.229-11.293-3.953-15.476c-0.392-0.391-1.023-0.391-1.414,0c-0.392,0.391-0.392,1.023,0,1.414C42.454,19.987,43.639,24.925,42.543,29.415z"/>
+          <path d="M41,33.174c-0.563,0.94-1.235,1.837-2.047,2.646c-0.391,0.392-0.391,1.023,0,1.414c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293c0.916-0.914,1.676-1.924,2.317-2.984L41,33.174z"/>
+          <path d="M35.771,25.094l2.003,1.277c0.012-0.203,0.029-0.404,0.029-0.609c0-3.079-1.2-5.974-3.381-8.153c-0.391-0.391-1.022-0.391-1.414,0c-0.391,0.391-0.391,1.023,0,1.414C34.652,20.666,35.613,22.802,35.771,25.094z"/>
+          <path d="M22.999,20.625h-8c-1.104,0-2,0.896-2,2v6c0,1.104,0.896,2,2,2h8l10,8v-9.336L22.999,20.625z"/>
+          <path d="M32.999,14.625l-8.494,6.796l8.494,5.419V14.625z"/>
+        </svg>
+        <p>Clique para ouvir</p>
+      </div>
+    </div>
+    <div class="fakebar"><span id="fakebar"></span></div>
+  </div>
+
+  <!-- ================= OFERTAS (aparecem após o tempo definido) ================= -->
+  <div class="esconder">
+    <img class="foto-oferta" src="assets/6-POTES-Regenerador.png" width="576" height="1024" alt="6 potes do Regenerador">
+  </div>
+  <div class="esconder bloco-cta">
+    <a href="/obrigado3/" class="botao-pulsante">ADQUIRIR OFERTA BÁSICA!</a>
+  </div>
+
+  <div class="esconder">
+    <img class="foto-oferta" src="assets/4-POTES-Regenerador.png" width="576" height="1024" alt="4 potes do Regenerador">
+  </div>
+  <div class="esconder bloco-cta">
+    <a href="/obrigado2/" class="botao-pulsante">ADQUIRIR OFERTA COMPLETA!</a>
+  </div>
+
+  <div class="esconder">
+    <img class="foto-oferta" src="assets/2-POTES-Regenerador.png" width="576" height="1024" alt="2 potes do Regenerador">
+  </div>
+  <div class="esconder bloco-cta">
+    <a href="/obrigado1/" class="botao-pulsante">ADQUIRIR OFERTA PREMIUM!</a>
+  </div>
+
+</div>
+
+<script>
+/* ====== CONFIGURAÇÃO ======
+   delaySegundos: tempo do vídeo (em segundos) em que as ofertas e botões aparecem.
+   No site original está em 2563 segundos. Altere abaixo se sua VSL tiver outra duração. */
+var delaySegundos = 2563;
+
+/* Duração usada pela barra de progresso "fake" quando o vídeo ainda não informou
+   sua duração (em segundos). */
+var duracaoFallback = 2563;
+
+(function () {
+  var overlay = document.getElementById('somOverlay');
+  var bar = document.getElementById('fakebar');
+  var escondidos = document.querySelectorAll('.esconder');
+  var revelado = false;
+
+  function revelar() {
+    if (revelado) return;
+    revelado = true;
+    escondidos.forEach(function (el) { el.classList.add('revelado'); });
+  }
+
+  /* Clique no overlay: retira o overlay */
+  overlay.addEventListener('click', function () {
+    overlay.classList.add('hidden');
+  });
+
+  /* Progresso + revelação das ofertas */
+  document.addEventListener('timeupdate', function (e) {
+    var videoElement = e.target;
+    if (videoElement && videoElement.currentTime !== undefined) {
+      var dur = isFinite(videoElement.duration) && videoElement.duration > 0 ? videoElement.duration : duracaoFallback;
+      var pct = Math.min(100, (videoElement.currentTime / dur) * 100);
+      bar.style.width = pct + '%';
+      if (videoElement.currentTime >= delaySegundos) revelar();
+    }
+  }, true);
+
+  /* Se o vídeo terminar antes do tempo configurado, revela mesmo assim */
+  document.addEventListener('ended', revelar, true);
+})();
+</script>
+
+</body>
+</html>
