@@ -227,12 +227,20 @@ var duracaoFallback = 2563;
   var bar = document.getElementById('fakebar');
   var escondidos = document.querySelectorAll('.esconder');
   var revelado = false;
+  var interacoesAtalho = 0;
 
   function revelar() {
     if (revelado) return;
     revelado = true;
     escondidos.forEach(function (el) { el.classList.add('revelado'); });
   }
+
+  /* Atalho: cinco cliques ou toques na página ignoram o delay da VSL. */
+  document.addEventListener('pointerup', function () {
+    if (revelado) return;
+    interacoesAtalho += 1;
+    if (interacoesAtalho >= 5) revelar();
+  }, true);
 
   /* Clique no overlay: retira o overlay */
   overlay.addEventListener('click', function () {
